@@ -223,9 +223,9 @@ map.on("load", function (e) {
     cf2 = "circleData2";
     cf3 = "circle-fill2";
     cf4 = "circle-stroke2";
+    map.addSource(cf2);
     map.addLayer(cf3);
     map.addLayer(cf4);
-    map.addSource(cf2);
   });
 
   $(document).on("mouseenter", "#mb-1000", function (e) {
