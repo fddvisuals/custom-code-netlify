@@ -207,7 +207,7 @@ map.on("load", function (e) {
 
   //Set hover state on Outer HTML made in Webflow
   $(document).on("mouseenter", "#mb-2000", function (e) {
-    map.setFilter("circleData5");
+    map.setFilter("circleData4");
     popup.setHTML("<b>Red: 2000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
