@@ -166,7 +166,7 @@ map.on("load", function (e) {
   //Popup on Hover
   map.on("mouseenter", "circle-fill", () => {
     map.getCanvas().style.cursor = "pointer";
-    popup.setHTML("<b>Green: 300 KM</b>");
+    popup.setHTML("<b>Green: 200 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
   });
@@ -212,6 +212,8 @@ map.on("load", function (e) {
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
     cf2 = "circleData2";
+    cf3 = "circle-fill2";
+    map.removeLayer(cf3);
     map.removeSource(cf2);
   });
   $(document).on("mouseleave", "#mb-2000", function (e) {
@@ -237,7 +239,7 @@ map.on("load", function (e) {
   });
 
   $(document).on("mouseenter", "#mb-200", function (e) {
-    popup.setHTML("<b>Green: 300 KM</b>");
+    popup.setHTML("<b>Green: 200 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
   });
