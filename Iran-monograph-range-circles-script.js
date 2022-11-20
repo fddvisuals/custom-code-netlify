@@ -12,7 +12,7 @@ let map = new mapboxgl.Map({
 });
 // Add Circle Radius
 const center = [LONG, LAT];
-const radius = 300;
+const radius = 200;
 const options = {
   steps: 150,
   units: "kilometers",
@@ -26,19 +26,19 @@ const options2 = {
 const center3 = [LONG, LAT];
 const radius3 = 1000;
 const options3 = {
-  steps: 50,
+  steps: 150,
   units: "kilometers",
 };
 const center4 = [LONG, LAT];
 const radius4 = 2000;
 const options4 = {
-  steps: 1050,
+  steps: 150,
   units: "kilometers",
 };
 const center5 = [LONG, LAT];
 const radius5 = 10;
 const options5 = {
-  steps: 50,
+  steps: 150,
   units: "kilometers",
 };
 const circle = turf.circle(center, radius, options);
@@ -207,10 +207,13 @@ map.on("load", function (e) {
 
   //Set hover state on Outer HTML made in Webflow
   $(document).on("mouseenter", "#mb-2000", function (e) {
-    map.setFilter("circleData4");
+    //map.setFilter("circleData4");
     popup.setHTML("<b>Red: 2000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    map.removeLayer("circle-fill1");
+    map.removeLayer("circle-fill2");
+    map.removeLayer("circle-fill3");
   });
   $(document).on("mouseleave", "#mb-2000", function (e) {
     popup.remove();
