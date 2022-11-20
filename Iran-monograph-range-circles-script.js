@@ -220,12 +220,25 @@ map.on("load", function (e) {
   });
   $(document).on("mouseleave", "#mb-2000", function (e) {
     popup.remove();
-    cf2 = "circleData2";
-    cf3 = "circle-fill2";
-    cf4 = "circle-stroke2";
-    map.addSource(cf2);
-    map.addLayer(cf3);
-    map.addLayer(cf4);
+    map.addLayer({
+      id: "circle-fill2",
+      type: "fill",
+      source: "circleData2",
+      paint: {
+        "fill-color": "#FEBE10",
+        "fill-opacity": 0.05,
+      },
+    });
+    map.addLayer({
+      id: "circle-stroke2",
+      type: "line",
+      source: "circleData2",
+      paint: {
+        "line-width": 2,
+        "line-color": "#FEBE10",
+        // "line-dasharray": [3, 3],
+      },
+    });
   });
 
   $(document).on("mouseenter", "#mb-1000", function (e) {
