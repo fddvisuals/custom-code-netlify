@@ -157,12 +157,12 @@ map.on("load", function (e) {
     closeOnClick: false,
   });
   //Popup on Click
-  map.on("click", "circle-fill", (e) => {
-    const circlett = e.features[0];
-    popup.setHTML("<b>300 KM</b>");
-    popup.setLngLat([LONG, LAT]);
-    popup.addTo(map);
-  });
+  // map.on("click", "circle-fill", (e) => {
+  //   const circlett = e.features[0];
+  //   popup.setHTML("<b>300 KM</b>");
+  //   popup.setLngLat([LONG, LAT]);
+  //   popup.addTo(map);
+  // });
   //Popup on Hover
   map.on("mouseenter", "circle-fill", () => {
     map.getCanvas().style.cursor = "pointer";
@@ -211,8 +211,8 @@ map.on("load", function (e) {
     popup.setHTML("<b>Red: 2000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
-    id = "circle-fill";
-    map.removeLayer(id);
+    cf2 = "circleData2";
+    map.removeSource(cf2);
   });
   $(document).on("mouseleave", "#mb-2000", function (e) {
     popup.remove();
