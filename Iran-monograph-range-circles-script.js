@@ -367,18 +367,156 @@ map.on("load", function (e) {
     popup.setHTML("<b>Yellow: 500 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    cf1 = "circle-fill";
+    cs1 = "circle-stroke";
+    cf3 = "circle-fill3";
+    cs3 = "circle-stroke3";
+    cf4 = "circle-fill4";
+    cs4 = "circle-stroke4";
+    map.removeLayer(cf1);
+    map.removeLayer(cs1);
+    map.removeLayer(cf4);
+    map.removeLayer(cs4);
+    map.removeLayer(cf3);
+    map.removeLayer(cs3);
   });
   $(document).on("mouseleave", "#mb-500", function (e) {
     popup.remove();
+    map.addLayer({
+      id: "circle-fill",
+      type: "fill",
+      source: "circleData",
+      paint: {
+        "fill-color": "#79BC6F",
+        "fill-opacity": 0.15,
+      },
+    });
+    map.addLayer({
+      id: "circle-stroke",
+      type: "line",
+      source: "circleData",
+      paint: {
+        "line-width": 2,
+        "line-color": "#79BC6F",
+        // "line-dasharray": [3, 3],
+      },
+    });
+    map.addLayer({
+      id: "circle-fill3",
+      type: "fill",
+      source: "circleData3",
+      paint: {
+        "fill-color": "#FF7700",
+        "fill-opacity": 0.05,
+      },
+    });
+    map.addLayer({
+      id: "circle-stroke3",
+      type: "line",
+      source: "circleData3",
+      paint: {
+        "line-width": 2,
+        "line-color": "#FF7700",
+        // "line-dasharray": [3, 3],
+      },
+    });
+    map.addLayer({
+      id: "circle-fill4",
+      type: "fill",
+      source: "circleData4",
+      paint: {
+        "fill-color": "#D2272D",
+        "fill-opacity": 0.05,
+      },
+    });
+    map.addLayer({
+      id: "circle-stroke4",
+      type: "line",
+      source: "circleData4",
+      paint: {
+        "line-width": 2,
+        "line-color": "#D2272D",
+        // "line-dasharray": [3, 3],
+      },
+    });
   });
 
   $(document).on("mouseenter", "#mb-200", function (e) {
     popup.setHTML("<b>Green: 200 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    cf2 = "circle-fill2";
+    cs2 = "circle-stroke2";
+    cf3 = "circle-fill3";
+    cs3 = "circle-stroke3";
+    cf4 = "circle-fill4";
+    cs4 = "circle-stroke4";
+    map.removeLayer(cf2);
+    map.removeLayer(cs2);
+    map.removeLayer(cf4);
+    map.removeLayer(cs4);
+    map.removeLayer(cf3);
+    map.removeLayer(cs3);
   });
   $(document).on("mouseleave", "#mb-200", function (e) {
     popup.remove();
+    map.addLayer({
+      id: "circle-fill2",
+      type: "fill",
+      source: "circleData2",
+      paint: {
+        "fill-color": "#FEBE10",
+        "fill-opacity": 0.05,
+      },
+    });
+    map.addLayer({
+      id: "circle-stroke2",
+      type: "line",
+      source: "circleData2",
+      paint: {
+        "line-width": 2,
+        "line-color": "#FEBE10",
+        // "line-dasharray": [3, 3],
+      },
+    });
+    map.addLayer({
+      id: "circle-fill3",
+      type: "fill",
+      source: "circleData3",
+      paint: {
+        "fill-color": "#FF7700",
+        "fill-opacity": 0.05,
+      },
+    });
+    map.addLayer({
+      id: "circle-stroke3",
+      type: "line",
+      source: "circleData3",
+      paint: {
+        "line-width": 2,
+        "line-color": "#FF7700",
+        // "line-dasharray": [3, 3],
+      },
+    });
+    map.addLayer({
+      id: "circle-fill4",
+      type: "fill",
+      source: "circleData4",
+      paint: {
+        "fill-color": "#D2272D",
+        "fill-opacity": 0.05,
+      },
+    });
+    map.addLayer({
+      id: "circle-stroke4",
+      type: "line",
+      source: "circleData4",
+      paint: {
+        "line-width": 2,
+        "line-color": "#D2272D",
+        // "line-dasharray": [3, 3],
+      },
+    });
   });
 });
 // Add marker
