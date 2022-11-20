@@ -216,7 +216,7 @@ map.on("load", function (e) {
     cf4 = "circle-stroke2";
     map.removeLayer(cf3);
     map.removeLayer(cf4);
-    map.removeSource(cf2);
+    //map.removeSource(cf2);
   });
   $(document).on("mouseleave", "#mb-2000", function (e) {
     popup.remove();
