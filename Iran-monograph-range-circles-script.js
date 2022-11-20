@@ -211,9 +211,8 @@ map.on("load", function (e) {
     popup.setHTML("<b>Red: 2000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
-    map.removeLayer("circle-fill1");
-    map.removeLayer("circle-fill2");
-    map.removeLayer("circle-fill3");
+    id = "circle-fill";
+    map.removeLayer(id);
   });
   $(document).on("mouseleave", "#mb-2000", function (e) {
     popup.remove();
