@@ -166,7 +166,7 @@ map.on("load", function (e) {
   //Popup on Hover
   map.on("mouseenter", "circle-fill", () => {
     map.getCanvas().style.cursor = "pointer";
-    popup.setHTML("<b>Green: 200 KM</b>");
+    popup.setHTML("<b> 200 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
   });
@@ -176,7 +176,7 @@ map.on("load", function (e) {
   });
   map.on("click", "circle-fill2", () => {
     map.getCanvas().style.cursor = "pointer";
-    popup.setHTML("<b>Yellow: 500 KM</b>");
+    popup.setHTML("<b>500 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
   });
@@ -186,7 +186,7 @@ map.on("load", function (e) {
   });
   map.on("mouseenter", "circle-fill3", () => {
     map.getCanvas().style.cursor = "pointer";
-    popup.setHTML("<b>Orange: 1000 KM</b>");
+    popup.setHTML("<b>1000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
   });
@@ -196,7 +196,7 @@ map.on("load", function (e) {
   });
   map.on("mouseenter", "circle-fill4", () => {
     map.getCanvas().style.cursor = "pointer";
-    popup.setHTML("<b>Red: 2000 KM</b>");
+    popup.setHTML("<b>2000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
   });
@@ -208,7 +208,7 @@ map.on("load", function (e) {
   //Set hover state on Outer HTML made in Webflow
   $(document).on("mouseenter", "#mb-2000", function (e) {
     //map.setFilter("circleData4");
-    popup.setHTML("<b>Red: 2000 KM</b>");
+    popup.setHTML("<b>2000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
     cf1 = "circle-fill";
@@ -286,7 +286,7 @@ map.on("load", function (e) {
   });
 
   $(document).on("mouseenter", "#mb-1000", function (e) {
-    popup.setHTML("<b>Orange: 1000 KM</b>");
+    popup.setHTML("<b>1000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
     cf1 = "circle-fill";
@@ -364,7 +364,7 @@ map.on("load", function (e) {
   });
 
   $(document).on("mouseenter", "#mb-500", function (e) {
-    popup.setHTML("<b>Yellow: 500 KM</b>");
+    popup.setHTML("<b>500 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
     cf1 = "circle-fill";
@@ -442,7 +442,7 @@ map.on("load", function (e) {
   });
 
   $(document).on("mouseenter", "#mb-200", function (e) {
-    popup.setHTML("<b>Green: 200 KM</b>");
+    popup.setHTML("<b> 200 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
     cf2 = "circle-fill2";
