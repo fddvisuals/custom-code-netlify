@@ -191,6 +191,16 @@ map.on("load", function (e) {
     popup.setHTML("<b>500 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    var target = $("#mb-500");
+    if (target.length) {
+      $("html,.missile-wrapper").animate(
+        {
+          scrollTop: target.offset().top + 20,
+        },
+        1000
+      );
+      return false;
+    }
   });
   map.on("mouseleave", "circle-fill2", () => {
     map.getCanvas().style.cursor = "";
@@ -201,6 +211,16 @@ map.on("load", function (e) {
     popup.setHTML("<b>1000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    var target = $("#mb-1000");
+    if (target.length) {
+      $("html,.missile-wrapper").animate(
+        {
+          scrollTop: target.offset().top + 20,
+        },
+        1000
+      );
+      return false;
+    }
   });
   map.on("mouseleave", "circle-fill3", () => {
     map.getCanvas().style.cursor = "";
@@ -211,6 +231,16 @@ map.on("load", function (e) {
     popup.setHTML("<b>2000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    var target = $("#mb-2000");
+    if (target.length) {
+      $("html,.missile-wrapper").animate(
+        {
+          scrollTop: target.offset().top + 20,
+        },
+        1000
+      );
+      return false;
+    }
   });
   map.on("mouseleave", "circle-fill4", () => {
     map.getCanvas().style.cursor = "";
