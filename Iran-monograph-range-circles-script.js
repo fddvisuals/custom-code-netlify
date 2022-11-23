@@ -170,7 +170,7 @@ map.on("load", function (e) {
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
     $(function () {
-      var target = $("#mb-2000");
+      var target = $("#mb-200");
       if (target.length) {
         $("html,.missile-wrapper").animate(
           {
