@@ -205,7 +205,7 @@ map.on("load", function (e) {
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
     map.setFeatureState(
-      // { source: 'states', id: hoveredStateId },
+      { source: "circleData", id: "circle-fill" },
       { hover: true }
     );
     map.addLayer({
