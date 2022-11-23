@@ -176,7 +176,7 @@ map.on("load", function (e) {
           {
             scrollTop: target.offset().top,
           },
-          1000
+          0
         );
         return false;
       }
