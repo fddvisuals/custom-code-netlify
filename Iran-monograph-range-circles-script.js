@@ -111,7 +111,12 @@ map.on("load", function (e) {
     source: "circleData",
     paint: {
       "fill-color": "#79BC6F",
-      "fill-opacity": 0,
+      "fill-opacity": [
+        "case",
+        ["boolean", ["feature-state", "hover"], false],
+        0.3,
+        0,
+      ],
     },
   });
 
