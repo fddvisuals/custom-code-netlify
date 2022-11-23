@@ -73,7 +73,7 @@ map.on("load", function (e) {
     source: "circleData",
     paint: {
       "fill-color": "#79BC6F",
-      "fill-opacity": 0.15,
+      "fill-opacity": 0.3,
     },
   });
   map.addLayer({
@@ -92,7 +92,7 @@ map.on("load", function (e) {
     source: "circleData2",
     paint: {
       "fill-color": "#FEBE10",
-      "fill-opacity": 0.05,
+      "fill-opacity": 0.3,
     },
   });
   map.addLayer({
@@ -111,7 +111,7 @@ map.on("load", function (e) {
     source: "circleData3",
     paint: {
       "fill-color": "#FF7700",
-      "fill-opacity": 0.05,
+      "fill-opacity": 0.3,
     },
   });
   map.addLayer({
@@ -130,7 +130,7 @@ map.on("load", function (e) {
     source: "circleData4",
     paint: {
       "fill-color": "#D2272D",
-      "fill-opacity": 0.05,
+      "fill-opacity": 0.3,
     },
   });
   map.addLayer({
@@ -149,7 +149,7 @@ map.on("load", function (e) {
     source: "circleData5",
     paint: {
       "fill-color": "white",
-      "fill-opacity": 0.05,
+      "fill-opacity": 0.3,
     },
   });
   const popup = new mapboxgl.Popup({
@@ -274,7 +274,7 @@ map.on("load", function (e) {
       source: "circleData",
       paint: {
         "fill-color": "#79BC6F",
-        "fill-opacity": 0.15,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -293,7 +293,7 @@ map.on("load", function (e) {
       source: "circleData2",
       paint: {
         "fill-color": "#FEBE10",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -312,7 +312,7 @@ map.on("load", function (e) {
       source: "circleData3",
       paint: {
         "fill-color": "#FF7700",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -352,7 +352,7 @@ map.on("load", function (e) {
       source: "circleData",
       paint: {
         "fill-color": "#79BC6F",
-        "fill-opacity": 0.15,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -371,7 +371,7 @@ map.on("load", function (e) {
       source: "circleData2",
       paint: {
         "fill-color": "#FEBE10",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -390,7 +390,7 @@ map.on("load", function (e) {
       source: "circleData4",
       paint: {
         "fill-color": "#D2272D",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -430,7 +430,7 @@ map.on("load", function (e) {
       source: "circleData",
       paint: {
         "fill-color": "#79BC6F",
-        "fill-opacity": 0.15,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -449,7 +449,7 @@ map.on("load", function (e) {
       source: "circleData3",
       paint: {
         "fill-color": "#FF7700",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -468,7 +468,7 @@ map.on("load", function (e) {
       source: "circleData4",
       paint: {
         "fill-color": "#D2272D",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -508,7 +508,7 @@ map.on("load", function (e) {
       source: "circleData2",
       paint: {
         "fill-color": "#FEBE10",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -527,7 +527,7 @@ map.on("load", function (e) {
       source: "circleData3",
       paint: {
         "fill-color": "#FF7700",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
@@ -546,7 +546,7 @@ map.on("load", function (e) {
       source: "circleData4",
       paint: {
         "fill-color": "#D2272D",
-        "fill-opacity": 0.05,
+        "fill-opacity": 0.3,
       },
     });
     map.addLayer({
