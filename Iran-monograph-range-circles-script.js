@@ -169,6 +169,18 @@ map.on("load", function (e) {
     popup.setHTML("<b> 200 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    $(function () {
+      var target = $("#mb-2000");
+      if (target.length) {
+        $("html,.missile-wrapper").animate(
+          {
+            scrollTop: target.offset().top,
+          },
+          1000
+        );
+        return false;
+      }
+    });
   });
   map.on("mouseleave", "circle-fill", () => {
     map.getCanvas().style.cursor = "";
