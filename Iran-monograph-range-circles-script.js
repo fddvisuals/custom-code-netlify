@@ -235,9 +235,9 @@ map.on("load", function (e) {
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
-          scrollTop: target.offset().top - 20,
+          scrollTop: target.offset().top,
         },
-        1000
+        150
       );
       return false;
     }
