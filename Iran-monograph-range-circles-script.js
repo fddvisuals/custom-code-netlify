@@ -75,7 +75,7 @@ map.on("load", function (e) {
     source: "circleData5",
     paint: {
       "fill-color": "white",
-      "fill-opacity": 0.1,
+      "fill-opacity": 0,
     },
   });
   map.addLayer({
@@ -84,7 +84,7 @@ map.on("load", function (e) {
     source: "circleData4",
     paint: {
       "fill-color": "#D2272D",
-      "fill-opacity": 0.1,
+      "fill-opacity": 0,
     },
   });
   map.addLayer({
@@ -93,7 +93,7 @@ map.on("load", function (e) {
     source: "circleData3",
     paint: {
       "fill-color": "#FF7700",
-      "fill-opacity": 0.1,
+      "fill-opacity": 0,
     },
   });
   map.addLayer({
@@ -102,7 +102,7 @@ map.on("load", function (e) {
     source: "circleData2",
     paint: {
       "fill-color": "#FEBE10",
-      "fill-opacity": 0.1,
+      "fill-opacity": 0,
     },
   });
   map.addLayer({
@@ -111,7 +111,7 @@ map.on("load", function (e) {
     source: "circleData",
     paint: {
       "fill-color": "#79BC6F",
-      "fill-opacity": 0.1,
+      "fill-opacity": 0,
     },
   });
 
@@ -179,6 +179,15 @@ map.on("load", function (e) {
     popup.setHTML("<b> 200 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    map.addLayer({
+      id: "circle-fill",
+      type: "fill",
+      source: "circleData",
+      paint: {
+        "fill-color": "#79BC6F",
+        "fill-opacity": 0.3,
+      },
+    });
     $(function () {
       var target = $("#mb-200");
       if (target.length) {
@@ -284,7 +293,7 @@ map.on("load", function (e) {
       source: "circleData",
       paint: {
         "fill-color": "#79BC6F",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -303,7 +312,7 @@ map.on("load", function (e) {
       source: "circleData2",
       paint: {
         "fill-color": "#FEBE10",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -322,7 +331,7 @@ map.on("load", function (e) {
       source: "circleData3",
       paint: {
         "fill-color": "#FF7700",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -362,7 +371,7 @@ map.on("load", function (e) {
       source: "circleData",
       paint: {
         "fill-color": "#79BC6F",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -381,7 +390,7 @@ map.on("load", function (e) {
       source: "circleData2",
       paint: {
         "fill-color": "#FEBE10",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -400,7 +409,7 @@ map.on("load", function (e) {
       source: "circleData4",
       paint: {
         "fill-color": "#D2272D",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -440,7 +449,7 @@ map.on("load", function (e) {
       source: "circleData",
       paint: {
         "fill-color": "#79BC6F",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -459,7 +468,7 @@ map.on("load", function (e) {
       source: "circleData3",
       paint: {
         "fill-color": "#FF7700",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -478,7 +487,7 @@ map.on("load", function (e) {
       source: "circleData4",
       paint: {
         "fill-color": "#D2272D",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -518,7 +527,7 @@ map.on("load", function (e) {
       source: "circleData2",
       paint: {
         "fill-color": "#FEBE10",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -537,7 +546,7 @@ map.on("load", function (e) {
       source: "circleData3",
       paint: {
         "fill-color": "#FF7700",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
@@ -556,7 +565,7 @@ map.on("load", function (e) {
       source: "circleData4",
       paint: {
         "fill-color": "#D2272D",
-        "fill-opacity": 0.1,
+        "fill-opacity": 0,
       },
     });
     map.addLayer({
