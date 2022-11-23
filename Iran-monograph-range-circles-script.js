@@ -222,7 +222,7 @@ map.on("load", function (e) {
       if (target.length) {
         $("html,.missile-wrapper").animate(
           {
-            scrollTop: target.offset().top + 100,
+            scrollTop: target.offset().top - 20,
           },
           1000
         );
@@ -243,7 +243,7 @@ map.on("load", function (e) {
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
-          scrollTop: target.offset().top + 100,
+          scrollTop: target.offset().top + 20,
         },
         1000
       );
@@ -263,7 +263,7 @@ map.on("load", function (e) {
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
-          scrollTop: target.offset().top + 100,
+          scrollTop: target.offset().top + 50,
         },
         1000
       );
@@ -283,7 +283,7 @@ map.on("load", function (e) {
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
-          scrollTop: target.offset().top + 100,
+          scrollTop: target.offset().top,
         },
         150
       );
