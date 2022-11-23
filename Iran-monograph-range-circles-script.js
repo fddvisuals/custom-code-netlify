@@ -196,7 +196,7 @@ map.on("load", function (e) {
     map.getCanvas().style.cursor = "";
     popup.remove();
   });
-  map.on("click", "circle-fill2", () => {
+  map.on("mouseenter", "circle-fill2", () => {
     map.getCanvas().style.cursor = "pointer";
     popup.setHTML("<b>500 KM</b>");
     popup.setLngLat([LONG, LAT]);
