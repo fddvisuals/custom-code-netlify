@@ -204,6 +204,7 @@ map.on("load", function (e) {
     popup.setHTML("<b> 200 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
+    map.setFeatureState({ source: "circle-fill" }, { hover: true });
     map.addLayer({
       id: "circle-fill",
       type: "fill",
