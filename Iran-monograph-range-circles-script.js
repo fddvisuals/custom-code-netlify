@@ -184,7 +184,7 @@ map.on("load", function (e) {
       if (target.length) {
         $("html,.missile-wrapper").animate(
           {
-            scrollTop: target.offset().top,
+            scrollTop: target.offset().bottom,
           },
           1000
         );
@@ -205,7 +205,7 @@ map.on("load", function (e) {
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
-          scrollTop: target.offset().top,
+          scrollTop: target.offset().bottom,
         },
         1000
       );
@@ -225,7 +225,7 @@ map.on("load", function (e) {
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
-          scrollTop: target.offset().top,
+          scrollTop: target.offset().bottom,
         },
         1000
       );
@@ -245,7 +245,7 @@ map.on("load", function (e) {
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
-          scrollTop: target.offset().top,
+          scrollTop: target.offset().bottom,
         },
         150
       );
