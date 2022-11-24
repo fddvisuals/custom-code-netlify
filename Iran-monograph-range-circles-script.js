@@ -224,7 +224,7 @@ map.on("load", function (e) {
           {
             scrollTop: target.offset().top - 20,
           },
-          1000
+          0
         );
         return false;
       }
@@ -245,7 +245,7 @@ map.on("load", function (e) {
         {
           scrollTop: target.offset().top + 20,
         },
-        1000
+        0
       );
       return false;
     }
@@ -265,7 +265,7 @@ map.on("load", function (e) {
         {
           scrollTop: target.offset().top + 50,
         },
-        1000
+        0
       );
       return false;
     }
@@ -285,7 +285,7 @@ map.on("load", function (e) {
         {
           scrollTop: target.offset().top - 50,
         },
-        150
+        0
       );
       return false;
     }
