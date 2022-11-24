@@ -230,7 +230,7 @@ map.on("load", function (e) {
     popup.setHTML("<b>500 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
-    var target = $("#mb-500");
+    var target = $("#mb-1000");
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
@@ -250,7 +250,7 @@ map.on("load", function (e) {
     popup.setHTML("<b>1000 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
-    var target = $("#mb-1000");
+    var target = $("#mb-500");
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
