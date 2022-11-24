@@ -209,11 +209,11 @@ map.on("load", function (e) {
       { hover: true }
     );
     $(function () {
-      var target = $("#mb-500");
+      var target = $("#mb-200");
       if (target.length) {
         $("html,.missile-wrapper").animate(
           {
-            scrollTop: target.offset().top,
+            scrollTop: target.offset().top - 20,
           },
           0
         );
