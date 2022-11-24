@@ -208,17 +208,8 @@ map.on("load", function (e) {
       { source: "circleData", id: "circle-fill" },
       { hover: true }
     );
-    map.addLayer({
-      id: "circle-fill",
-      type: "fill",
-      source: "circleData",
-      paint: {
-        "fill-color": "#79BC6F",
-        "fill-opacity": 0.3,
-      },
-    });
     $(function () {
-      var target = $("#mb-200");
+      var target = $("#mb-500");
       if (target.length) {
         $("html,.missile-wrapper").animate(
           {
@@ -239,7 +230,7 @@ map.on("load", function (e) {
     popup.setHTML("<b>500 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
-    var target = $("#mb-500");
+    var target = $("#mb-200");
     if (target.length) {
       $("html,.missile-wrapper").animate(
         {
