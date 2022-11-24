@@ -79,7 +79,7 @@ map.on("load", function (e) {
         "case",
         ["boolean", ["feature-state", "hover"], false],
         0.5,
-        0.1,
+        0,
       ],
     },
   });
@@ -93,7 +93,7 @@ map.on("load", function (e) {
         "case",
         ["boolean", ["feature-state", "hover"], false],
         0.5,
-        0.1,
+        0,
       ],
     },
   });
@@ -107,7 +107,7 @@ map.on("load", function (e) {
         "case",
         ["boolean", ["feature-state", "hover"], false],
         0.5,
-        0.1,
+        0,
       ],
     },
   });
@@ -121,7 +121,7 @@ map.on("load", function (e) {
         "case",
         ["boolean", ["feature-state", "hover"], false],
         0.5,
-        0.1,
+        0,
       ],
     },
   });
@@ -135,7 +135,7 @@ map.on("load", function (e) {
         "case",
         ["boolean", ["feature-state", "hover"], false],
         0.5,
-        0.1,
+        0,
       ],
     },
   });
