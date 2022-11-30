@@ -8,7 +8,7 @@ let map = new mapboxgl.Map({
   projection: "mercator",
   pitch: "-10",
   center: [LONG, LAT], // starting position [lng, lat]
-  zoom: 2, // starting zoom
+  zoom: 1.8, // starting zoom
 });
 // Add Circle Radius
 const center = [LONG, LAT];
