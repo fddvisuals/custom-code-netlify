@@ -159,28 +159,7 @@ $(document).ready(function () {
             //set popup text
             //You can adjust the values of the popup to match the headers of your CSV.
             // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
-            var description =
-              `<h3>` +
-              e.features[0].properties.District +
-              `</h3>` +
-              `<h5>` +
-              `<b>` +
-              `Date: ` +
-              `</b>` +
-              e.features[0].properties.Date +
-              `</h5>` +
-              `<h5>` +
-              `<b>` +
-              `Description: ` +
-              `</b>` +
-              e.features[0].properties.Description +
-              `</h5>` +
-              `<h5>` +
-              `<b>` +
-              `Estimated Size of the Protest: ` +
-              `</b>` +
-              e.features[0].properties.Estimated_Size +
-              `</h4>`;
+            var description = `<h3>${e.features[0].properties.District}</h3><h5><u>Date: ${e.features[0].properties.Formatted_Date}</u></h5><h5><b>Description: </b>${e.features[0].properties.Description}</h5><h5><b>Estimated Size of the Protest: </b>${e.features[0].properties.Estimated_Size}</h4>`;
 
             // Ensure that if the map is zoomed out such that multiple
             // copies of the feature are visible, the popup appears
