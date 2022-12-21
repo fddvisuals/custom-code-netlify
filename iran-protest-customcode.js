@@ -40,7 +40,7 @@ $.ajax(
 $(document).ready(function () {
   $.ajax({
     type: "GET",
-    url: "https://docs.google.com/spreadsheets/d/1k9pmYP2UBYC7N5uIkXYy5UR4B15cFr1zpNSbCOg2BHo/gviz/tq?tqx=out:csv&sheet=master",
+    url: "https://docs.google.com/spreadsheets/d/1k9pmYP2UBYC7N5uIkXYy5UR4B15cFr1zpNSbCOg2BHo/gviz/tq?tqx=out:csv&sheet=Sheet1",
     dataType: "text",
     success: function (csvData) {
       makeGeoJSON(csvData);
