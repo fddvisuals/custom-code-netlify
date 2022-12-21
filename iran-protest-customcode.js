@@ -163,13 +163,19 @@ $(document).ready(function () {
               `<h3>` +
               e.features[0].properties.District +
               `</h3>` +
-              `<h4>` +
+              `<h5>` +
+              `<b>` +
+              `Date: ` +
+              `</b>` +
+              e.features[0].properties.Date +
+              `</h5>` +
+              `<h5>` +
               `<b>` +
               `Description: ` +
               `</b>` +
               e.features[0].properties.Description +
-              `</h4>` +
-              `<h4>` +
+              `</h5>` +
+              `<h5>` +
               `<b>` +
               `Estimated Size of the Protest: ` +
               `</b>` +
