@@ -155,7 +155,7 @@ $(document).ready(function () {
           // location of the feature, with description HTML from its properties.
           map.on("click", "csvData", function (e) {
             var coordinates = e.features[0].geometry.coordinates.slice();
-            popupIf();
+
             //set popup text
             // var description2 = `<h3>${e.features[0].properties.District}</h3><h5><u>Date: ${e.features[0].properties.Formatted_Date}</u></h5><h5><b>Description: </b>${e.features[0].properties.Description}</h5><h5><b>Estimated Size of the Protest: </b>${e.features[0].properties.Estimated_Size}</h4>`;
             var description = `<div class="popup"><div class="popup-date"><div class="icon w-embed"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -168,6 +168,10 @@ $(document).ready(function () {
             <div id="w-node-_3a663dd9-9279-9e1a-bc96-7b8781166f4e-a186f4f5" class="popup-grid-div"><div class="popup-grid-head">Injured</div><div class="popup-grid-head bold">${e.features[0].properties.Injured}</div></div><div id="w-node-_8cf7185e-00a1-3f76-f669-cd9000d2aab4-a186f4f5" class="popup-grid-div"><div class="popup-grid-head">Arrested</div><div class="popup-grid-head bold">${e.features[0].properties.Arrested}</div></div><div id="w-node-d6506aec-67e8-cd45-23be-9b7a043e57e3-a186f4f5" class="popup-grid-div"><div class="popup-grid-head">Killed</div><div class="popup-grid-head bold">${e.features[0].properties.Killed}</div></div></div></div><div class="view-source-div"><a href="${e.features[0].properties.Link}" target="_blank" class="link-block w-inline-block"><div class="vieewsource">View Source</div><div class="external_icon w-embed"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 6V8H5V19H16V14H18V20C18 20.2652 17.8946 20.5196 17.7071 20.7071C17.5196 20.8946 17.2652 21 17 21H4C3.73478 21 3.48043 20.8946 3.29289 20.7071C3.10536 20.5196 3 20.2652 3 20V7C3 6.73478 3.10536 6.48043 3.29289 6.29289C3.48043 6.10536 3.73478 6 4 6H10ZM21 3V12L17.206 8.207L11.207 14.207L9.793 12.793L15.792 6.793L12 3H21Z" fill="currentColor"></path>
             </svg></div></a></div></div>`;
+            if (e.features[0].properties.Estimated_Size != "Medium") {
+              $(".popup-grid-div-injured").toggleClass("is-hidden");
+              console.log(e.features[0].properties.Estimated_Size);
+            }
 
             // var description = `<div class="popup"><div class="popup-date"><span class="popup-span">Date:&nbsp;</span>${e.features[0].properties.Formatted_Date}</div><div class="popup-area"><span class="popup-span">Location: </span>${e.features[0].properties.District}</div><div class="popup-area"><span class="popup-span">Estimated Size: </span>${e.features[0].properties.Estimated_Size}</div><div class="description">${e.features[0].properties.Description}</div><div class="view-source-div"><a href="${e.features[0].properties.Link}" class="link-block w-inline-block"><div>View Source</div></a></div></div>`;
             // Ensure that if the map is zoomed out such that multiple
@@ -202,9 +206,3 @@ $(document).ready(function () {
     );
   }
 });
-function popupIf() {
-  if (e.features[0].properties.Estimated_Size != "Medium") {
-    $(".popup-grid-div-injured").toggleClass("is-hidden");
-    console.log(e.features[0].properties.Estimated_Size);
-  }
-}
