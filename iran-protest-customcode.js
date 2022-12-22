@@ -157,8 +157,8 @@ $(document).ready(function () {
             var coordinates = e.features[0].geometry.coordinates.slice();
             if (e.features[0].properties.Estimated_Size != "Medium") {
               $(".popup-grid-div-injured").toggleClass("is-hidden");
+              console.log(e.features[0].properties.Estimated_Size);
             }
-            console.log(e.features[0].properties.Estimated_Size);
 
             //set popup text
             // var description2 = `<h3>${e.features[0].properties.District}</h3><h5><u>Date: ${e.features[0].properties.Formatted_Date}</u></h5><h5><b>Description: </b>${e.features[0].properties.Description}</h5><h5><b>Estimated Size of the Protest: </b>${e.features[0].properties.Estimated_Size}</h4>`;
