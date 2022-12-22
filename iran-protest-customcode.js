@@ -183,7 +183,7 @@ $(document).ready(function () {
               .setLngLat(coordinates)
               .setHTML(description)
               .addTo(map);
-            if (e.features[0].properties.Injured == "0") {
+            if (e.features[0].properties.Estimated_Size == "Medium") {
               $(".popup-grid-div-injured").toggleClass("is-hidden");
             }
           });
