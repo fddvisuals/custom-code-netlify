@@ -186,6 +186,7 @@ $(document).ready(function () {
             if (e.features[0].properties.Estimated_Size == "Medium") {
               $(".popup-grid-div-injured").toggleClass("is-hidden");
             }
+            console.log(e.features[0].properties.Estimated_Size);
           });
 
           // Change the cursor to a pointer when the mouse is over the places layer.
