@@ -155,7 +155,7 @@ $(document).ready(function () {
           // location of the feature, with description HTML from its properties.
           map.on("click", "csvData", function (e) {
             var coordinates = e.features[0].geometry.coordinates.slice();
-
+            popupIf();
             //set popup text
             // var description2 = `<h3>${e.features[0].properties.District}</h3><h5><u>Date: ${e.features[0].properties.Formatted_Date}</u></h5><h5><b>Description: </b>${e.features[0].properties.Description}</h5><h5><b>Estimated Size of the Protest: </b>${e.features[0].properties.Estimated_Size}</h4>`;
             var description = `<div class="popup"><div class="popup-date"><div class="icon w-embed"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,10 +183,6 @@ $(document).ready(function () {
               .setLngLat(coordinates)
               .setHTML(description)
               .addTo(map);
-            if (e.features[0].properties.Estimated_Size != "Medium") {
-              $(".popup-grid-div-injured").toggleClass("is-hidden");
-              console.log(e.features[0].properties.Estimated_Size);
-            }
           });
 
           // Change the cursor to a pointer when the mouse is over the places layer.
@@ -206,3 +202,9 @@ $(document).ready(function () {
     );
   }
 });
+function popupIf() {
+  if (e.features[0].properties.Estimated_Size != "Medium") {
+    $(".popup-grid-div-injured").toggleClass("is-hidden");
+    console.log(e.features[0].properties.Estimated_Size);
+  }
+}
