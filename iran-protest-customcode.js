@@ -258,7 +258,35 @@ $(document).ready(function () {
             }
 
             //add Popup to map
-            renderListings();
+            filterEl.addEventListener("onload", (e) => {
+              const value = normalize(e.target.value);
+
+              // Filter visible features that match the input value.
+              const filtered = [];
+              for (const feature of airports) {
+                const name = normalize(feature.properties.name);
+                const code = normalize(feature.properties.abbrev);
+                if (name.includes(value) || code.includes(value)) {
+                  filtered.push(feature);
+                }
+              }
+
+              // Populate the sidebar with filtered results
+              renderListings(filtered);
+
+              // Set the filter to populate features into the layer.
+              if (filtered.length) {
+                map.setFilter("csvData", [
+                  "match",
+                  ["get", "wb-id"],
+                  filtered.map((feature) => {
+                    return feature.properties.Description;
+                  }),
+                  true,
+                  false,
+                ]);
+              }
+            });
             new mapboxgl.Popup()
               .setLngLat(coordinates)
               .setHTML(description)
