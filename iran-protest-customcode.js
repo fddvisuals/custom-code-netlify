@@ -58,25 +58,38 @@ $.ajax(
 //     decimals,
 //     duration
 //   );
-//   // Scroll out of view trigger
-//   ScrollTrigger.create({
-//     trigger: $(this),
-//     start: "top bottom",
-//     end: "bottom top",
-//     onLeaveBack: () => {
-//       myCounter.reset();
-//     },
-//   });
-//   // Scroll into view trigger
-//   ScrollTrigger.create({
-//     trigger: $(this),
-//     start: "top 80%",
-//     end: "bottom top",
-//     onEnter: () => {
-//       myCounter.start();
-//     },
-//   });
-// });
+const listingEl = document.getElementById("feature-listing");
+
+function renderListings(features) {
+  const empty = document.createElement("p");
+  // Clear any existing listings
+  listingEl.innerHTML = "";
+  if (features.length) {
+    for (const feature of features) {
+      const itemLink = document.createElement("a");
+      const label = `${feature.properties.Formatted_Date} (${feature.properties.Description})`;
+      itemLink.href = feature.properties.Link;
+      itemLink.target = "_blank";
+      itemLink.textContent = label;
+      listingEl.appendChild(itemLink);
+    }
+
+    // Show the filter input
+    filterEl.parentNode.style.display = "block";
+  } else if (features.length === 0) {
+    empty.textContent = "No results found";
+    listingEl.appendChild(empty);
+  } else {
+    empty.textContent = "Drag the map to populate results";
+    listingEl.appendChild(empty);
+
+    // Hide the filter input
+    filterEl.parentNode.style.display = "none";
+
+    // remove features filter
+    // map.setFilter("airport", ["has", "abbrev"]);
+  }
+}
 $(document).ready(function () {
   $.ajax({
     type: "GET",
