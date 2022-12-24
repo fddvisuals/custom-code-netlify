@@ -90,6 +90,9 @@ function renderListings(features) {
     // map.setFilter("airport", ["has", "abbrev"]);
   }
 }
+function normalize(string) {
+  return string.trim().toLowerCase();
+}
 $(document).ready(function () {
   $.ajax({
     type: "GET",
@@ -255,7 +258,7 @@ $(document).ready(function () {
             }
 
             //add Popup to map
-
+            renderListings();
             new mapboxgl.Popup()
               .setLngLat(coordinates)
               .setHTML(description)
