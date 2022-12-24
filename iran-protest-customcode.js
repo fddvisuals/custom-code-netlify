@@ -58,41 +58,7 @@ $.ajax(
 //     decimals,
 //     duration
 //   );
-const listingEl = document.getElementById("feature-listing");
 
-function renderListings(features) {
-  const empty = document.createElement("p");
-  // Clear any existing listings
-  listingEl.innerHTML = "";
-  if (features.length) {
-    for (const feature of features) {
-      const itemLink = document.createElement("a");
-      const label = `${feature.properties.Formatted_Date} (${feature.properties.Description})`;
-      itemLink.href = feature.properties.Link;
-      itemLink.target = "_blank";
-      itemLink.textContent = label;
-      listingEl.appendChild(itemLink);
-    }
-
-    // Show the filter input
-    filterEl.parentNode.style.display = "block";
-  } else if (features.length === 0) {
-    empty.textContent = "No results found";
-    listingEl.appendChild(empty);
-  } else {
-    empty.textContent = "Drag the map to populate results";
-    listingEl.appendChild(empty);
-
-    // Hide the filter input
-    filterEl.parentNode.style.display = "none";
-
-    // remove features filter
-    // map.setFilter("airport", ["has", "abbrev"]);
-  }
-}
-function normalize(string) {
-  return string.trim().toLowerCase();
-}
 $(document).ready(function () {
   $.ajax({
     type: "GET",
@@ -258,35 +224,7 @@ $(document).ready(function () {
             }
 
             //add Popup to map
-            filterEl.addEventListener("onload", (e) => {
-              const value = normalize(e.target.value);
 
-              // Filter visible features that match the input value.
-              const filtered = [];
-              for (const feature of airports) {
-                const name = normalize(feature.properties.name);
-                const code = normalize(feature.properties.abbrev);
-                if (name.includes(value) || code.includes(value)) {
-                  filtered.push(feature);
-                }
-              }
-
-              // Populate the sidebar with filtered results
-              renderListings(filtered);
-
-              // Set the filter to populate features into the layer.
-              if (filtered.length) {
-                map.setFilter("csvData", [
-                  "match",
-                  ["get", "wb-id"],
-                  filtered.map((feature) => {
-                    return feature.properties.Description;
-                  }),
-                  true,
-                  false,
-                ]);
-              }
-            });
             new mapboxgl.Popup()
               .setLngLat(coordinates)
               .setHTML(description)
