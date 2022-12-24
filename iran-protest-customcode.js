@@ -46,14 +46,14 @@ $(".ticker-text").each(function (index) {
   let thisId = "countup" + index;
   $(this).attr("id", thisId);
   // create variables
-  let startNumber = +$(this).text();
-  let endNumber = +$(this).attr("final-number");
+  // let startNumber = +$(this).text();
+  let endNumber = lastupdated;
   let decimals = 0;
   let duration = 2.5;
   // animate number
   let myCounter = new CountUp(
     thisId,
-    startNumber,
+    // startNumber,
     endNumber,
     decimals,
     duration
