@@ -16,31 +16,7 @@ var map = new mapboxgl.Map({
   zoom: 3, // starting zoom
   transformRequest: transformRequest,
 });
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=a2&single=true&output=csv"
-).done(function (injured) {
-  document.getElementById("id_injured").innerHTML = injured;
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=c2&single=true&output=csv"
-).done(function (arrested) {
-  document.getElementById("id_arrested").innerHTML = arrested;
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=b2&single=true&output=csv"
-).done(function (killed) {
-  document.getElementById("id_killed").innerHTML = killed;
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=d2&single=true&output=csv"
-).done(function (total_events) {
-  document.getElementById("id_total").innerHTML = total_events;
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=e2&single=true&output=csv"
-).done(function (lastupdated) {
-  document.getElementById("last-updated").innerHTML = lastupdated;
-});
+
 // $(".ticker-text").each(function (index) {
 //   // assign ID
 //   let thisId = "countup" + index;
@@ -438,4 +414,29 @@ $(document).ready(function () {
       }
     );
   }
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=a2&single=true&output=csv"
+).done(function (injured) {
+  document.getElementById("id_injured").innerHTML = injured;
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=c2&single=true&output=csv"
+).done(function (arrested) {
+  document.getElementById("id_arrested").innerHTML = arrested;
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=b2&single=true&output=csv"
+).done(function (killed) {
+  document.getElementById("id_killed").innerHTML = killed;
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=d2&single=true&output=csv"
+).done(function (total_events) {
+  document.getElementById("id_total").innerHTML = total_events;
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=e2&single=true&output=csv"
+).done(function (lastupdated) {
+  document.getElementById("last-updated").innerHTML = lastupdated;
 });
