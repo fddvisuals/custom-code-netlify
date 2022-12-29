@@ -16,31 +16,31 @@ var map = new mapboxgl.Map({
   zoom: 3, // starting zoom
   transformRequest: transformRequest,
 });
-// $.ajax(
-//   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=a2&single=true&output=csv"
-// ).done(function (injured) {
-//   document.getElementById("id_injured").innerHTML = injured;
-// });
-// $.ajax(
-//   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=c2&single=true&output=csv"
-// ).done(function (arrested) {
-//   document.getElementById("id_arrested").innerHTML = arrested;
-// });
-// $.ajax(
-//   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=b2&single=true&output=csv"
-// ).done(function (killed) {
-//   document.getElementById("id_killed").innerHTML = killed;
-// });
-// $.ajax(
-//   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=d2&single=true&output=csv"
-// ).done(function (total_events) {
-//   document.getElementById("id_total").innerHTML = total_events;
-// });
-// $.ajax(
-//   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=e2&single=true&output=csv"
-// ).done(function (lastupdated) {
-//   document.getElementById("last-updated").innerHTML = lastupdated;
-// });
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=a2&single=true&output=csv"
+).done(function (injured) {
+  document.getElementById("id_injured").innerHTML = injured;
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=c2&single=true&output=csv"
+).done(function (arrested) {
+  document.getElementById("id_arrested").innerHTML = arrested;
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=b2&single=true&output=csv"
+).done(function (killed) {
+  document.getElementById("id_killed").innerHTML = killed;
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=d2&single=true&output=csv"
+).done(function (total_events) {
+  document.getElementById("id_total").innerHTML = total_events;
+});
+$.ajax(
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=e2&single=true&output=csv"
+).done(function (lastupdated) {
+  document.getElementById("last-updated").innerHTML = lastupdated;
+});
 // $(".ticker-text").each(function (index) {
 //   // assign ID
 //   let thisId = "countup" + index;
@@ -66,6 +66,7 @@ $(document).ready(function () {
     dataType: "text",
     success: function (csvData) {
       makeGeoJSON(csvData);
+      console.log("success");
     },
     error: function (request, status, error) {
       console.log(request.responseText);
@@ -260,105 +261,3 @@ $(document).ready(function () {
     );
   }
 });
-var sheetdata = [];
-//replace it with your values
-makecall({
-  sheetid: "19INcGk03GVptSGlP9z2hyji4K60TVIIpjOXNgFe95EA",
-  apikey: "AIzaSyDgOmjasGRL6RGVUCZZVnSsoKszB5TOHDQ",
-  parentdivclass: ".main-div",
-  elementdivclass: ".sing-list",
-  emptylist: ".empty-list",
-});
-
-function makecall(initobj) {
-  $(".main-div").hide();
-  $.ajax({
-    url:
-      "https://sheets.googleapis.com/v4/spreadsheets/" +
-      initobj.sheetid +
-      "/values:batchGet?ranges=Sheet1&key=" +
-      initobj.apikey,
-    type: "GET",
-    dataType: "json", // added data type
-    success: function (res) {
-      let valuerage = res.valueRanges;
-      valuerage.forEach((val, mainindex) => {
-        val.values.forEach((singval, index) => {
-          if (index != 0) {
-            sheetdata.push(singval);
-          }
-        });
-      });
-      creatediv(initobj, sheetdata);
-    },
-  });
-
-  function creatediv(initobj, homedat) {
-    for (let x = 0; x < homedat.length; x++) {
-      let singdat = homedat[x];
-      $(initobj.parentdivclass).append(
-        '<div class="sing-list w-clearfix"><img src=' +
-          singdat[2] +
-          'loading="lazy" alt="" class="listing-img"><div class="listing-det"><h2 class="listing-head">' +
-          singdat[0] +
-          '</h2><p class="listing-parag">' +
-          singdat[1] +
-          "</p></div></div>"
-      );
-    }
-    $(initobj.elementdivclass)[0].remove();
-    $(initobj.parentdivclass).show();
-    $(initobj.emptylist).hide();
-  }
-  var sheetdata = [];
-  //replace it with your values
-  makecall({
-    sheetid: "1k9pmYP2UBYC7N5uIkXYy5UR4B15cFr1zpNSbCOg2BHo",
-    apikey: "aiCnb4mdXnPPURa5D0rOab_SEWwm",
-    parentdivclass: ".main-div",
-    elementdivclass: ".sing-list",
-    emptylist: ".empty-list",
-  });
-
-  function makecall(initobj) {
-    $(".main-div").hide();
-    $.ajax({
-      url:
-        "https://sheets.googleapis.com/v4/spreadsheets/" +
-        initobj.sheetid +
-        "/values:batchGet?ranges=Sheet1&key=" +
-        initobj.apikey,
-      type: "GET",
-      dataType: "json", // added data type
-      success: function (res) {
-        let valuerage = res.valueRanges;
-        valuerage.forEach((val, mainindex) => {
-          val.values.forEach((singval, index) => {
-            if (index != 0) {
-              sheetdata.push(singval);
-            }
-          });
-        });
-        creatediv(initobj, sheetdata);
-      },
-    });
-
-    function creatediv(initobj, homedat) {
-      for (let x = 0; x < homedat.length; x++) {
-        let singdat = homedat[x];
-        $(initobj.parentdivclass).append(
-          '<div class="sing-list w-clearfix"><img src=' +
-            singdat[2] +
-            'loading="lazy" alt="" class="listing-img"><div class="listing-det"><h2 class="listing-head">' +
-            singdat[0] +
-            '</h2><p class="listing-parag">' +
-            singdat[1] +
-            "</p></div></div>"
-        );
-      }
-      $(initobj.elementdivclass)[0].remove();
-      $(initobj.parentdivclass).show();
-      $(initobj.emptylist).hide();
-    }
-  }
-}
