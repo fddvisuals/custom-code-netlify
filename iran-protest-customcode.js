@@ -56,306 +56,304 @@ $(document).ready(function () {
       function (err, data) {
         map.on("load", function () {
           //Add the the layer to the map
-          map.addLayer(
-            {
-              id: "csvData",
-              type: "circle",
-              source: {
-                type: "geojson",
-                data: data,
-              },
-              paint: {
-                "circle-radius": 5,
-                "circle-color": [
-                  "match",
-                  ["get", "Estimated_Size"],
-                  "Unspecified",
-                  "hsl(357, 5%, 36%)",
-                  "Medium",
-                  "hsl(23, 89%, 45%)",
-                  ["Small", "small"],
-                  "hsl(49, 100%, 51%)",
-                  "Large",
-                  "hsl(0, 95%, 45%)",
-                  "hsla(0, 0%, 0%, 0)",
-                ],
-                "circle-opacity": 0.5,
-                "circle-stroke-width": [
-                  "case",
-                  ["==", ["get", "Arrested"], 0],
-                  0.75,
-                  [">", ["get", "Arrested"], 10],
-                  2,
-                  [">", ["get", "Arrested"], 22],
-                  4,
-                  [">", ["get", "Arrested"], 880],
-                  10,
-                  0.75,
-                ],
-                "circle-stroke-color": "black",
-                "circle-radius": 8,
-                // [
-                //   "interpolate",
-                //   ["linear"],
-                //   ["zoom"],
-                //   0,
-                //   [
-                //     "*",
-                //     [
-                //       "match",
-                //       ["get", "Estimated_Size"],
-                //       "Unspecified",
-                //       3,
-                //       ["Small", "small"],
-                //       12,
-                //       "Medium",
-                //       15,
-                //       "Large",
-                //       21,
-                //       0,
-                //     ],
-                //     0.5,
-                //   ],
-                //   5,
-                //   [
-                //     "*",
-                //     [
-                //       "match",
-                //       ["get", "Estimated_Size"],
-                //       "Unspecified",
-                //       3,
-                //       ["Small", "small"],
-                //       12,
-                //       "Medium",
-                //       15,
-                //       "Large",
-                //       21,
-                //       0,
-                //     ],
-                //     0.55,
-                //   ],
-                //   10,
-                //   [
-                //     "*",
-                //     [
-                //       "match",
-                //       ["get", "Estimated_Size"],
-                //       "Unspecified",
-                //       3,
-                //       ["Small", "small"],
-                //       12,
-                //       "Medium",
-                //       15,
-                //       "Large",
-                //       21,
-                //       0,
-                //     ],
-                //     0.7,
-                //   ],
-                //   22,
-                //   [
-                //     "*",
-                //     [
-                //       "match",
-                //       ["get", "Estimated_Size"],
-                //       "Unspecified",
-                //       3,
-                //       ["Small", "small"],
-                //       12,
-                //       "Medium",
-                //       15,
-                //       "Large",
-                //       21,
-                //       0,
-                //     ],
-                //     1,
-                //   ],
-                // ],
+          map.addLayer({
+            version: 8,
+            name: "Mapbox Streets tileset v8",
+            sources: {
+              "mapbox-streets": {
+                type: "vector",
+                url: "mapbox://mapbox.mapbox-streets-v8",
               },
             },
-            {
-              version: 8,
-              name: "Mapbox Streets tileset v8",
-              sources: {
-                "mapbox-streets": {
-                  type: "vector",
-                  url: "mapbox://mapbox.mapbox-streets-v8",
+            layers: [
+              {
+                id: "admin",
+                source: "mapbox-streets",
+                "source-layer": "admin",
+                type: "line",
+                paint: {
+                  "line-color": "#ffffff",
                 },
               },
-              layers: [
-                {
-                  id: "admin",
-                  source: "mapbox-streets",
-                  "source-layer": "admin",
-                  type: "line",
-                  paint: {
-                    "line-color": "#ffffff",
-                  },
+              {
+                id: "aeroway",
+                source: "mapbox-streets",
+                "source-layer": "aeroway",
+                type: "line",
+                paint: {
+                  "line-color": "#ffffff",
                 },
-                {
-                  id: "aeroway",
-                  source: "mapbox-streets",
-                  "source-layer": "aeroway",
-                  type: "line",
-                  paint: {
-                    "line-color": "#ffffff",
-                  },
+              },
+              {
+                id: "airport_label",
+                source: "mapbox-streets",
+                "source-layer": "airport_label",
+                type: "circle",
+                paint: {
+                  "circle-radius": 3,
+                  "circle-color": "rgba(238,78,139, 0.4)",
+                  "circle-stroke-color": "rgba(238,78,139, 1)",
+                  "circle-stroke-width": 1,
                 },
-                {
-                  id: "airport_label",
-                  source: "mapbox-streets",
-                  "source-layer": "airport_label",
-                  type: "circle",
-                  paint: {
-                    "circle-radius": 3,
-                    "circle-color": "rgba(238,78,139, 0.4)",
-                    "circle-stroke-color": "rgba(238,78,139, 1)",
-                    "circle-stroke-width": 1,
-                  },
+              },
+              {
+                id: "building",
+                source: "mapbox-streets",
+                "source-layer": "building",
+                type: "fill",
+                paint: {
+                  "fill-color": "rgba(66,100,251, 0.3)",
+                  "fill-outline-color": "rgba(66,100,251, 1)",
                 },
-                {
-                  id: "building",
-                  source: "mapbox-streets",
-                  "source-layer": "building",
-                  type: "fill",
-                  paint: {
-                    "fill-color": "rgba(66,100,251, 0.3)",
-                    "fill-outline-color": "rgba(66,100,251, 1)",
-                  },
+              },
+              {
+                id: "housenum_label",
+                source: "mapbox-streets",
+                "source-layer": "housenum_label",
+                type: "circle",
+                paint: {
+                  "circle-radius": 3,
+                  "circle-color": "rgba(238,78,139, 0.4)",
+                  "circle-stroke-color": "rgba(238,78,139, 1)",
+                  "circle-stroke-width": 1,
                 },
-                {
-                  id: "housenum_label",
-                  source: "mapbox-streets",
-                  "source-layer": "housenum_label",
-                  type: "circle",
-                  paint: {
-                    "circle-radius": 3,
-                    "circle-color": "rgba(238,78,139, 0.4)",
-                    "circle-stroke-color": "rgba(238,78,139, 1)",
-                    "circle-stroke-width": 1,
-                  },
+              },
+              {
+                id: "landuse_overlay",
+                source: "mapbox-streets",
+                "source-layer": "landuse_overlay",
+                type: "fill",
+                paint: {
+                  "fill-color": "rgba(66,100,251, 0.3)",
+                  "fill-outline-color": "rgba(66,100,251, 1)",
                 },
-                {
-                  id: "landuse_overlay",
-                  source: "mapbox-streets",
-                  "source-layer": "landuse_overlay",
-                  type: "fill",
-                  paint: {
-                    "fill-color": "rgba(66,100,251, 0.3)",
-                    "fill-outline-color": "rgba(66,100,251, 1)",
-                  },
+              },
+              {
+                id: "landuse",
+                source: "mapbox-streets",
+                "source-layer": "landuse",
+                type: "fill",
+                paint: {
+                  "fill-color": "rgba(66,100,251, 0.3)",
+                  "fill-outline-color": "rgba(66,100,251, 1)",
                 },
-                {
-                  id: "landuse",
-                  source: "mapbox-streets",
-                  "source-layer": "landuse",
-                  type: "fill",
-                  paint: {
-                    "fill-color": "rgba(66,100,251, 0.3)",
-                    "fill-outline-color": "rgba(66,100,251, 1)",
-                  },
+              },
+              {
+                id: "motorway_junction",
+                source: "mapbox-streets",
+                "source-layer": "motorway_junction",
+                type: "circle",
+                paint: {
+                  "circle-radius": 3,
+                  "circle-color": "rgba(238,78,139, 0.4)",
+                  "circle-stroke-color": "rgba(238,78,139, 1)",
+                  "circle-stroke-width": 1,
                 },
-                {
-                  id: "motorway_junction",
-                  source: "mapbox-streets",
-                  "source-layer": "motorway_junction",
-                  type: "circle",
-                  paint: {
-                    "circle-radius": 3,
-                    "circle-color": "rgba(238,78,139, 0.4)",
-                    "circle-stroke-color": "rgba(238,78,139, 1)",
-                    "circle-stroke-width": 1,
-                  },
+              },
+              {
+                id: "natural_label",
+                source: "mapbox-streets",
+                "source-layer": "natural_label",
+                type: "circle",
+                paint: {
+                  "circle-radius": 3,
+                  "circle-color": "rgba(238,78,139, 0.4)",
+                  "circle-stroke-color": "rgba(238,78,139, 1)",
+                  "circle-stroke-width": 1,
                 },
-                {
-                  id: "natural_label",
-                  source: "mapbox-streets",
-                  "source-layer": "natural_label",
-                  type: "circle",
-                  paint: {
-                    "circle-radius": 3,
-                    "circle-color": "rgba(238,78,139, 0.4)",
-                    "circle-stroke-color": "rgba(238,78,139, 1)",
-                    "circle-stroke-width": 1,
-                  },
+              },
+              {
+                id: "place_label",
+                source: "mapbox-streets",
+                "source-layer": "place_label",
+                type: "circle",
+                paint: {
+                  "circle-radius": 3,
+                  "circle-color": "rgba(238,78,139, 0.4)",
+                  "circle-stroke-color": "rgba(238,78,139, 1)",
+                  "circle-stroke-width": 1,
                 },
-                {
-                  id: "place_label",
-                  source: "mapbox-streets",
-                  "source-layer": "place_label",
-                  type: "circle",
-                  paint: {
-                    "circle-radius": 3,
-                    "circle-color": "rgba(238,78,139, 0.4)",
-                    "circle-stroke-color": "rgba(238,78,139, 1)",
-                    "circle-stroke-width": 1,
-                  },
+              },
+              {
+                id: "poi_label",
+                source: "mapbox-streets",
+                "source-layer": "poi_label",
+                type: "circle",
+                paint: {
+                  "circle-radius": 3,
+                  "circle-color": "rgba(238,78,139, 0.4)",
+                  "circle-stroke-color": "rgba(238,78,139, 1)",
+                  "circle-stroke-width": 1,
                 },
-                {
-                  id: "poi_label",
-                  source: "mapbox-streets",
-                  "source-layer": "poi_label",
-                  type: "circle",
-                  paint: {
-                    "circle-radius": 3,
-                    "circle-color": "rgba(238,78,139, 0.4)",
-                    "circle-stroke-color": "rgba(238,78,139, 1)",
-                    "circle-stroke-width": 1,
-                  },
+              },
+              {
+                id: "road",
+                source: "mapbox-streets",
+                "source-layer": "road",
+                type: "line",
+                paint: {
+                  "line-color": "#ffffff",
                 },
-                {
-                  id: "road",
-                  source: "mapbox-streets",
-                  "source-layer": "road",
-                  type: "line",
-                  paint: {
-                    "line-color": "#ffffff",
-                  },
+              },
+              {
+                id: "structure",
+                source: "mapbox-streets",
+                "source-layer": "structure",
+                type: "fill",
+                paint: {
+                  "fill-color": "rgba(66,100,251, 0.3)",
+                  "fill-outline-color": "rgba(66,100,251, 1)",
                 },
-                {
-                  id: "structure",
-                  source: "mapbox-streets",
-                  "source-layer": "structure",
-                  type: "fill",
-                  paint: {
-                    "fill-color": "rgba(66,100,251, 0.3)",
-                    "fill-outline-color": "rgba(66,100,251, 1)",
-                  },
+              },
+              {
+                id: "transit_stop_label",
+                source: "mapbox-streets",
+                "source-layer": "transit_stop_label",
+                type: "circle",
+                paint: {
+                  "circle-radius": 3,
+                  "circle-color": "rgba(238,78,139, 0.4)",
+                  "circle-stroke-color": "rgba(238,78,139, 1)",
+                  "circle-stroke-width": 1,
                 },
-                {
-                  id: "transit_stop_label",
-                  source: "mapbox-streets",
-                  "source-layer": "transit_stop_label",
-                  type: "circle",
-                  paint: {
-                    "circle-radius": 3,
-                    "circle-color": "rgba(238,78,139, 0.4)",
-                    "circle-stroke-color": "rgba(238,78,139, 1)",
-                    "circle-stroke-width": 1,
-                  },
+              },
+              {
+                id: "water",
+                source: "mapbox-streets",
+                "source-layer": "water",
+                type: "fill",
+                paint: {
+                  "fill-color": "rgba(66,100,251, 0.3)",
+                  "fill-outline-color": "rgba(66,100,251, 1)",
                 },
-                {
-                  id: "water",
-                  source: "mapbox-streets",
-                  "source-layer": "water",
-                  type: "fill",
-                  paint: {
-                    "fill-color": "rgba(66,100,251, 0.3)",
-                    "fill-outline-color": "rgba(66,100,251, 1)",
-                  },
+              },
+              {
+                id: "waterway",
+                source: "mapbox-streets",
+                "source-layer": "waterway",
+                type: "line",
+                paint: {
+                  "line-color": "#ffffff",
                 },
-                {
-                  id: "waterway",
-                  source: "mapbox-streets",
-                  "source-layer": "waterway",
-                  type: "line",
-                  paint: {
-                    "line-color": "#ffffff",
-                  },
-                },
+              },
+            ],
+          });
+          map.addLayer({
+            id: "csvData",
+            type: "circle",
+            source: {
+              type: "geojson",
+              data: data,
+            },
+            paint: {
+              "circle-radius": 5,
+              "circle-color": [
+                "match",
+                ["get", "Estimated_Size"],
+                "Unspecified",
+                "hsl(357, 5%, 36%)",
+                "Medium",
+                "hsl(23, 89%, 45%)",
+                ["Small", "small"],
+                "hsl(49, 100%, 51%)",
+                "Large",
+                "hsl(0, 95%, 45%)",
+                "hsla(0, 0%, 0%, 0)",
               ],
-            }
-          );
+              "circle-opacity": 0.5,
+              "circle-stroke-width": [
+                "case",
+                ["==", ["get", "Arrested"], 0],
+                0.75,
+                [">", ["get", "Arrested"], 10],
+                2,
+                [">", ["get", "Arrested"], 22],
+                4,
+                [">", ["get", "Arrested"], 880],
+                10,
+                0.75,
+              ],
+              "circle-stroke-color": "black",
+              "circle-radius": 8,
+              // [
+              //   "interpolate",
+              //   ["linear"],
+              //   ["zoom"],
+              //   0,
+              //   [
+              //     "*",
+              //     [
+              //       "match",
+              //       ["get", "Estimated_Size"],
+              //       "Unspecified",
+              //       3,
+              //       ["Small", "small"],
+              //       12,
+              //       "Medium",
+              //       15,
+              //       "Large",
+              //       21,
+              //       0,
+              //     ],
+              //     0.5,
+              //   ],
+              //   5,
+              //   [
+              //     "*",
+              //     [
+              //       "match",
+              //       ["get", "Estimated_Size"],
+              //       "Unspecified",
+              //       3,
+              //       ["Small", "small"],
+              //       12,
+              //       "Medium",
+              //       15,
+              //       "Large",
+              //       21,
+              //       0,
+              //     ],
+              //     0.55,
+              //   ],
+              //   10,
+              //   [
+              //     "*",
+              //     [
+              //       "match",
+              //       ["get", "Estimated_Size"],
+              //       "Unspecified",
+              //       3,
+              //       ["Small", "small"],
+              //       12,
+              //       "Medium",
+              //       15,
+              //       "Large",
+              //       21,
+              //       0,
+              //     ],
+              //     0.7,
+              //   ],
+              //   22,
+              //   [
+              //     "*",
+              //     [
+              //       "match",
+              //       ["get", "Estimated_Size"],
+              //       "Unspecified",
+              //       3,
+              //       ["Small", "small"],
+              //       12,
+              //       "Medium",
+              //       15,
+              //       "Large",
+              //       21,
+              //       0,
+              //     ],
+              //     1,
+              //   ],
+              // ],
+            },
+          });
 
           // When a click event occurs on a feature in the csvData layer, open a popup at the
           // location of the feature, with description HTML from its properties.
@@ -416,29 +414,4 @@ $(document).ready(function () {
       }
     );
   }
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=a2&single=true&output=csv"
-).done(function (injured) {
-  document.getElementById("id_injured").innerHTML = injured;
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=c2&single=true&output=csv"
-).done(function (arrested) {
-  document.getElementById("id_arrested").innerHTML = arrested;
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=b2&single=true&output=csv"
-).done(function (killed) {
-  document.getElementById("id_killed").innerHTML = killed;
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=d2&single=true&output=csv"
-).done(function (total_events) {
-  document.getElementById("id_total").innerHTML = total_events;
-});
-$.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=e2&single=true&output=csv"
-).done(function (lastupdated) {
-  document.getElementById("last-updated").innerHTML = lastupdated;
 });
