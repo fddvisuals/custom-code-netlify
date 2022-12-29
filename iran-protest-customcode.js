@@ -67,6 +67,9 @@ $(document).ready(function () {
     success: function (csvData) {
       makeGeoJSON(csvData);
     },
+    error: function (request, status, error) {
+      console.log(request.responseText);
+    },
   });
 
   function makeGeoJSON(csvData) {
