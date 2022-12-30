@@ -122,20 +122,12 @@ function addPoints(data) {
 
     let el = document.createElement("div");
     el.className = "marker";
-    el.innerHTML = ``;
+    el.innerHTML = `<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="9.5" cy="9.5" r="9.5" fill="#C47070"/>
+    </svg>
+    `;
 
     try {
-      map.addLayer({
-        id: "dots",
-        type: "circle",
-        source: {
-          type: "geojson",
-          data: data,
-        },
-        paint: {
-          "circle-radius": 5,
-        },
-      });
       let marker = new mapboxgl.Marker(el)
         .setLngLat([Long, Lat])
         .setPopup(popup)
