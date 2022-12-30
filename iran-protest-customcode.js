@@ -77,22 +77,22 @@ $.ajax(
   document.getElementById("cell-11").innerHTML = cell11;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=c3&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=d2&single=true&output=csv"
 ).done(function (cell12) {
   document.getElementById("cell-12").innerHTML = cell12;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=c4&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=e2&single=true&output=csv"
 ).done(function (cell13) {
   document.getElementById("cell-13").innerHTML = cell13;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=c5&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=f2&single=true&output=csv"
 ).done(function (cell14) {
   document.getElementById("cell-14").innerHTML = cell14;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=d2&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=c3&single=true&output=csv"
 ).done(function (cell21) {
   document.getElementById("cell-21").innerHTML = cell21;
 });
@@ -102,22 +102,22 @@ $.ajax(
   document.getElementById("cell-22").innerHTML = cell22;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=d4&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=e3&single=true&output=csv"
 ).done(function (cell23) {
   document.getElementById("cell-23").innerHTML = cell23;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=d5&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=f3&single=true&output=csv"
 ).done(function (cell24) {
   document.getElementById("cell-24").innerHTML = cell24;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=e2&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=c4&single=true&output=csv"
 ).done(function (cell31) {
   document.getElementById("cell-31").innerHTML = cell31;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=e3&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=d4&single=true&output=csv"
 ).done(function (cell32) {
   document.getElementById("cell-32").innerHTML = cell32;
 });
@@ -127,7 +127,7 @@ $.ajax(
   document.getElementById("cell-33").innerHTML = cell33;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=e5&single=true&output=csv"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=1972050773&range=f4&single=true&output=csv"
 ).done(function (cell34) {
   document.getElementById("cell-34").innerHTML = cell34;
 });
