@@ -88,10 +88,6 @@ $.ajax(
 //     duration
 //   );
 map.on("load", function () {
-  init();
-});
-
-function init() {
   Papa.parse(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=0&single=true&output=csv",
     {
@@ -102,7 +98,48 @@ function init() {
       },
     }
   );
-}
+  map.addLayer({
+    id: "results",
+    type: "circle",
+    source: {
+      type: "text",
+      data: data,
+    },
+    paint: {
+      "circle-radius": 5,
+      "circle-color": [
+        "match",
+        ["get", "Estimated_Size"],
+        "Unspecified",
+        "hsl(357, 5%, 36%)",
+        "Medium",
+        "hsl(23, 89%, 45%)",
+        ["Small", "small"],
+        "hsl(49, 100%, 51%)",
+        "Large",
+        "hsl(0, 95%, 45%)",
+        "hsla(0, 0%, 0%, 0)",
+      ],
+      "circle-opacity": 0.5,
+      "circle-stroke-width": [
+        "case",
+        ["==", ["get", "Arrested"], 0],
+        0.75,
+        [">", ["get", "Arrested"], 10],
+        2,
+        [">", ["get", "Arrested"], 22],
+        4,
+        [">", ["get", "Arrested"], 880],
+        10,
+        0.75,
+      ],
+      "circle-stroke-color": "black",
+      "circle-radius": 8,
+    },
+  });
+});
+
+function init() {}
 // Hide loader when markers are visible
 
 function buildPopup(row) {
@@ -170,43 +207,7 @@ function addPoints(data) {
 //   //     function (err, data) {
 //   //       map.on("load", function () {
 //   //         //Add the the layer to the map
-//   //         map.addLayer({
-//   //           id: "csvData",
-//   //           type: "circle",
-//   //           source: {
-//   //             type: "geojson",
-//   //             data: data,
-//   //           },
-//   //           paint: {
-//   //             "circle-radius": 5,
-//   //             "circle-color": [
-//   //               "match",
-//   //               ["get", "Estimated_Size"],
-//   //               "Unspecified",
-//   //               "hsl(357, 5%, 36%)",
-//   //               "Medium",
-//   //               "hsl(23, 89%, 45%)",
-//   //               ["Small", "small"],
-//   //               "hsl(49, 100%, 51%)",
-//   //               "Large",
-//   //               "hsl(0, 95%, 45%)",
-//   //               "hsla(0, 0%, 0%, 0)",
-//   //             ],
-//   //             "circle-opacity": 0.5,
-//   //             "circle-stroke-width": [
-//   //               "case",
-//   //               ["==", ["get", "Arrested"], 0],
-//   //               0.75,
-//   //               [">", ["get", "Arrested"], 10],
-//   //               2,
-//   //               [">", ["get", "Arrested"], 22],
-//   //               4,
-//   //               [">", ["get", "Arrested"], 880],
-//   //               10,
-//   //               0.75,
-//   //             ],
-//   //             "circle-stroke-color": "black",
-//   //             "circle-radius": 8,
+
 //   //             // [
 //   //             //   "interpolate",
 //   //             //   ["linear"],
