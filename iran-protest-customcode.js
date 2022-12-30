@@ -160,50 +160,53 @@ function buildPopup(row) {
 }
 const listingEl = document.getElementById("feature-listing");
 function addPoints(data) {
-  data.forEach(function (row) {
-    let popup = new mapboxgl.Popup().setHTML(buildPopup(row));
-    let Long = row.Longitude;
-    let Lat = row.Latitude;
-    generateListings(row);
-    let el = document.createElement("div");
-    el.className = "marker";
-    if (row.Estimated_Size == "Large") {
-      el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+  data
+    .slice()
+    .reverse()
+    .forEach(function (row) {
+      let popup = new mapboxgl.Popup().setHTML(buildPopup(row));
+      let Long = row.Longitude;
+      let Lat = row.Latitude;
+      generateListings(row);
+      let el = document.createElement("div");
+      el.className = "marker";
+      if (row.Estimated_Size == "Large") {
+        el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9.5" cy="9.5" r="9.5" fill="#C47070" fill-opacity="0.5"/>
     <circle cx="9.5" cy="9.5" r="9" stroke="black" stroke-opacity="0.5"/>
     </svg>`;
-    } else if (row.Estimated_Size == "Small") {
-      el.innerHTML = `<svg width="2" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      } else if (row.Estimated_Size == "Small") {
+        el.innerHTML = `<svg width="2" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9.5" cy="9.5" r="9.5" fill="green" fill-opacity="0.5"/>
     <circle cx="9.5" cy="9.5" r="9" stroke="black" stroke-opacity="0.5"/>
     </svg>`;
-    } else if (row.Estimated_Size == "Medium") {
-      el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      } else if (row.Estimated_Size == "Medium") {
+        el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9.5" cy="9.5" r="9.5" fill="orange" fill-opacity="0.5"/>
     <circle cx="9.5" cy="9.5" r="9" stroke="black" stroke-opacity="0.5"/>
     </svg>`;
-    } else {
-      el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      } else {
+        el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9.5" cy="9.5" r="9.5" fill="grey" fill-opacity="0.5"/>
     <circle cx="9.5" cy="9.5" r="9" stroke="black" stroke-opacity="0.5"/>
     </svg>`;
-    }
-    try {
-      let marker = new mapboxgl.Marker(el)
-        .setLngLat([Long, Lat])
-        .setPopup(popup)
-        .addTo(map);
-    } catch (error) {
-      console.log(`Error: ${error}. Row: ${row.webid}`);
-    }
-  });
+      }
+      try {
+        let marker = new mapboxgl.Marker(el)
+          .setLngLat([Long, Lat])
+          .setPopup(popup)
+          .addTo(map);
+      } catch (error) {
+        console.log(`Error: ${error}. Row: ${row.webid}`);
+      }
+    });
 
   function generateListings(row) {
     const itemLink = document.createElement("a");
     itemLink.href - "#";
     itemLink.target = "_blank";
     itemLink.className = "link-block w-inline block";
-    itemLink.innerHTML = `<div class="title-wrapper-listing"><div class="list-blue-title"><img src="" loading="lazy" alt="" class="listing-icon red"><p class="bold-listing-title-mil"> ${row.Date} | ${row.District} <br><span class="group-name-span">${row.Province}</span></p></div><div class="subtitle-wrapper"><div class="listing-subtitle-wrapper"><img src="https://uploads-ssl.webflow.com/6352289bab9b05d2a93f26f6/6381d9eac6b1ef242239cb16_Vector-1.svg" loading="lazy" alt="" class="listing-sub-icon"><p class="bold-listing-subtitle">${row.Date}</p></div><div class="listing-subtitle-wrapper"><img src="https://uploads-ssl.webflow.com/6352289bab9b05d2a93f26f6/6381d9eac50a51f40b798700_Vector.svg" loading="lazy" alt="" class="listing-sub-icon"><p class="bold-listing-subtitle">${row.Estimated_Size}</p></div></div></div><p class="listing-text">${row.Description}</p>`;
+    itemLink.innerHTML = `<div class="title-wrapper-listing"><div class="list-blue-title"><p class="bold-listing-title-mil"> ${row.Date} | ${row.District} <br><span class="group-name-span">${row.Province}</span></p></div><div class="subtitle-wrapper"><div class="listing-subtitle-wrapper"><img src="https://uploads-ssl.webflow.com/6352289bab9b05d2a93f26f6/6381d9eac6b1ef242239cb16_Vector-1.svg" loading="lazy" alt="" class="listing-sub-icon"><p class="bold-listing-subtitle">${row.Date}</p></div><div class="listing-subtitle-wrapper"><img src="https://uploads-ssl.webflow.com/6352289bab9b05d2a93f26f6/6381d9eac50a51f40b798700_Vector.svg" loading="lazy" alt="" class="listing-sub-icon"><p class="bold-listing-subtitle">${row.Estimated_Size}</p></div></div></div><p class="listing-text">${row.Description}</p>`;
     listingEl.appendChild(itemLink);
   }
 }
