@@ -137,8 +137,10 @@ function addPoints(data) {
     // )}"></i>`;
 
     try {
+      let Long = row.Longitude;
+      let Lat = row.Latitude;
       let marker = new mapboxgl.Marker(el)
-        .setLngLat(row.Longitude, row.Latitude)
+        .setLngLat(Long, Lat)
         .setPopup(popup)
         .addTo(map);
     } catch (error) {
