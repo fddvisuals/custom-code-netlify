@@ -126,7 +126,7 @@ function addPoints(data) {
 
     try {
       map.addLayer({
-        id: "results",
+        id: "dots",
         type: "circle",
         source: {
           type: "geojson",
