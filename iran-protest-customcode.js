@@ -127,6 +127,8 @@ function buildPopup(row) {
 function addPoints(data) {
   data.forEach(function (row) {
     let popup = new mapboxgl.Popup().setHTML(buildPopup(row));
+    let Long = row.Longitude;
+    let Lat = row.Latitude;
 
     let el = document.createElement("div");
     el.className = "marker";
@@ -137,8 +139,6 @@ function addPoints(data) {
     // )}"></i>`;
 
     try {
-      let Long = row.Longitude;
-      let Lat = row.Latitude;
       let marker = new mapboxgl.Marker(el)
         .setLngLat(Long, Lat)
         .setPopup(popup)
