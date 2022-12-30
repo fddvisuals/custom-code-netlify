@@ -168,22 +168,22 @@ function addPoints(data) {
     let el = document.createElement("div");
     el.className = "marker";
     if (row.Estimated_Size == "Large") {
-      el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      el.innerHTML = `<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9.5" cy="9.5" r="9.5" fill="#C47070" fill-opacity="0.5"/>
     <circle cx="9.5" cy="9.5" r="9" stroke="black" stroke-opacity="0.5"/>
     </svg>`;
     } else if (row.Estimated_Size == "Small") {
-      el.innerHTML = `<svg width="2" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      el.innerHTML = `<svg width=192" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9.5" cy="9.5" r="9.5" fill="green" fill-opacity="0.5"/>
     <circle cx="9.5" cy="9.5" r="9" stroke="black" stroke-opacity="0.5"/>
     </svg>`;
     } else if (row.Estimated_Size == "Medium") {
-      el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      el.innerHTML = `<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9.5" cy="9.5" r="9.5" fill="orange" fill-opacity="0.5"/>
     <circle cx="9.5" cy="9.5" r="9" stroke="black" stroke-opacity="0.5"/>
     </svg>`;
     } else {
-      el.innerHTML = `<svg width="12" height="12" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      el.innerHTML = `<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9.5" cy="9.5" r="9.5" fill="grey" fill-opacity="0.5"/>
     <circle cx="9.5" cy="9.5" r="9" stroke="black" stroke-opacity="0.5"/>
     </svg>`;
