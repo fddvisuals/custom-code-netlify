@@ -28,11 +28,6 @@ function waitForElement(selector) {
   });
 }
 
-// Hide loader when markers are visible
-waitForElement(".marker").then(function (element) {
-  document.querySelector(".loader").style.display = "none";
-});
-
 let transformRequest = (url, resourceType) => {
   const isMapboxRequest = url.indexOf("mapbox.com") !== -1;
 
