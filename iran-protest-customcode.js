@@ -103,7 +103,7 @@ map.on("load", function () {
     type: "circle",
     source: {
       type: "text",
-      data: data,
+      data: results.data,
     },
     paint: {
       "circle-radius": 5,
