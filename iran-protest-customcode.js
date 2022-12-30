@@ -140,7 +140,7 @@ function addPoints(data) {
 
     try {
       let marker = new mapboxgl.Marker(el)
-        .setLngLat(Long, Lat)
+        .setLngLat({ Long, Lat })
         .setPopup(popup)
         .addTo(map);
     } catch (error) {
