@@ -127,8 +127,8 @@ function buildPopup(row) {
 function addPoints(data) {
   data.forEach(function (row) {
     let popup = new mapboxgl.Popup().setHTML(buildPopup(row));
-    let Long = row.Longitude;
-    let Lat = row.Latitude;
+    let Long = row.Longitude.replace(/\s/g, "");
+    let Lat = row.Latitude.replace(/\s/g, "");
 
     let el = document.createElement("div");
     el.className = "marker";
