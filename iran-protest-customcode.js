@@ -139,8 +139,6 @@ map.on("load", function () {
       header: true,
       complete: function (results) {
         addPoints(results.data);
-      },
-      complete: function (results) {
         addRecent(results.data);
       },
     }
@@ -167,7 +165,6 @@ function addPoints(data) {
     let popup = new mapboxgl.Popup().setHTML(buildPopup(row));
     let Long = row.Longitude;
     let Lat = row.Latitude;
-
     let el = document.createElement("div");
     el.className = "marker";
     if (row.Estimated_Size == "Large") {
