@@ -43,6 +43,7 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/pavakpatel/clc951nvr00ch14oxscsbswec",
   center: [49.4, 35.7], // starting position [lng, lat]
   zoom: 5.5, // starting zoom
+  cluster: true,
   transformRequest: transformRequest,
 });
 $.ajax(
