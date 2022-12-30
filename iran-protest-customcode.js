@@ -138,8 +138,7 @@ map.on("load", function () {
       download: true,
       header: true,
       complete: function (results) {
-        // addPoints(results.data);
-        addRecent(results.data);
+        addPoints(results.data);
       },
     }
   );
