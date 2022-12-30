@@ -30,7 +30,6 @@ function waitForElement(selector) {
 
 let transformRequest = (url, resourceType) => {
   const isMapboxRequest = url.indexOf("mapbox.com") !== -1;
-
   return {
     url: isMapboxRequest ? url.replace("?", "?pluginName=sheetMapper&") : url,
   };
