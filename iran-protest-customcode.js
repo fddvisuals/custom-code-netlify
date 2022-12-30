@@ -130,7 +130,7 @@ function addPoints(data) {
         type: "circle",
         source: {
           type: "text",
-          data: results,
+          data: data,
         },
         paint: {
           "circle-radius": 5,
