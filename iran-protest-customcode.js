@@ -72,10 +72,10 @@ $.ajax(
   document.getElementById("last-updated").innerHTML = lastupdated;
 });
 $.ajax(
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pubhtml?gid=1972050773&range=c2:e2&single=true"
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pubhtml?gid=1972050773&range=e2:c2&single=true&output=csv"
 ).done(function (cell11) {
   document.getElementById("cell-11").innerHTML = cell11;
-  document.getElementById("cell-12").innerHTML = cell11[1];
+  // document.getElementById("cell-12").innerHTML = cell11[1];
 });
 
 map.on("load", function () {
