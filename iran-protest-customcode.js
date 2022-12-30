@@ -139,6 +139,7 @@ map.on("load", function () {
       header: true,
       complete: function (results) {
         addPoints(results.data);
+        addRecent(results.data);
       },
     }
   );
@@ -159,7 +160,6 @@ function buildPopup(row) {
   return popup;
 }
 function addPoints(data) {
-  addRecent(results.data);
   data.forEach(function (row) {
     let popup = new mapboxgl.Popup().setHTML(buildPopup(row));
     let Long = row.Longitude;
