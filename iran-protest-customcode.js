@@ -159,6 +159,7 @@ function buildPopup(row) {
   return popup;
 }
 function addPoints(data) {
+  addRecent(results.data);
   data.forEach(function (row) {
     let popup = new mapboxgl.Popup().setHTML(buildPopup(row));
     let Long = row.Longitude;
@@ -196,4 +197,16 @@ function addPoints(data) {
       console.log(`Error: ${error}. Row: ${row.webid}`);
     }
   });
+
+  const listingEl = document.getElementById("feature-listing");
+  function addRecent(data) {
+    data.forEach(function (row) {
+      const itemLink = document.createElement("a");
+      itemLink.href - "#";
+      itemLink.target = "_blank";
+      itemLink.className = "link-block w-inline block";
+      itemLink.innerHTML = `<div class="title-wrapper-listing"><div class="list-blue-title"><img src="" loading="lazy" alt="" class="listing-icon red"><p class="bold-listing-title-mil"> ${row.Date} | ${row.District} <br><span class="group-name-span">${row.Province}</span></p></div><div class="subtitle-wrapper"><div class="listing-subtitle-wrapper"><img src="https://uploads-ssl.webflow.com/6352289bab9b05d2a93f26f6/6381d9eac6b1ef242239cb16_Vector-1.svg" loading="lazy" alt="" class="listing-sub-icon"><p class="bold-listing-subtitle">${row.Date}</p></div><div class="listing-subtitle-wrapper"><img src="https://uploads-ssl.webflow.com/6352289bab9b05d2a93f26f6/6381d9eac50a51f40b798700_Vector.svg" loading="lazy" alt="" class="listing-sub-icon"><p class="bold-listing-subtitle">${row.Estimated_Size}</p></div></div></div><p class="listing-text">${row.Description}</p>`;
+    });
+    listingEl.appendChild(itemLink);
+  }
 }
