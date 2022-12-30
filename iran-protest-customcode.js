@@ -129,7 +129,7 @@ function addPoints(data) {
         id: "results",
         type: "circle",
         source: {
-          type: "text",
+          type: "geojson",
           data: data,
         },
         paint: {
