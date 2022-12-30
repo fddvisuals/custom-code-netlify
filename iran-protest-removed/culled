@@ -90,3 +90,20 @@
 //   //   );
 //   // }
 // });
+// $(".ticker-text").each(function (index) {
+//   // assign ID
+//   let thisId = "countup" + index;
+//   $(this).attr("id", thisId);
+//   // create variables
+//   // let startNumber = +$(this).text();
+//   let endNumber = lastupdated;
+//   let decimals = 0;
+//   let duration = 2.5;
+//   // animate number
+//   let myCounter = new CountUp(
+//     thisId,
+//     // startNumber,
+//     endNumber,
+//     decimals,
+//     duration
+//   );
