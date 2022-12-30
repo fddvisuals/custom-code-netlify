@@ -95,45 +95,6 @@ map.on("load", function () {
       header: true,
       complete: function (results) {
         addPoints(results.data);
-        map.addLayer({
-          id: "results",
-          type: "circle",
-          source: {
-            type: "text",
-            data: results,
-          },
-          paint: {
-            "circle-radius": 5,
-            "circle-color": [
-              "match",
-              ["get", "Estimated_Size"],
-              "Unspecified",
-              "hsl(357, 5%, 36%)",
-              "Medium",
-              "hsl(23, 89%, 45%)",
-              ["Small", "small"],
-              "hsl(49, 100%, 51%)",
-              "Large",
-              "hsl(0, 95%, 45%)",
-              "hsla(0, 0%, 0%, 0)",
-            ],
-            "circle-opacity": 0.5,
-            "circle-stroke-width": [
-              "case",
-              ["==", ["get", "Arrested"], 0],
-              0.75,
-              [">", ["get", "Arrested"], 10],
-              2,
-              [">", ["get", "Arrested"], 22],
-              4,
-              [">", ["get", "Arrested"], 880],
-              10,
-              0.75,
-            ],
-            "circle-stroke-color": "black",
-            "circle-radius": 8,
-          },
-        });
       },
     }
   );
@@ -164,6 +125,45 @@ function addPoints(data) {
     el.innerHTML = ``;
 
     try {
+      map.addLayer({
+        id: "results",
+        type: "circle",
+        source: {
+          type: "text",
+          data: results,
+        },
+        paint: {
+          "circle-radius": 5,
+          "circle-color": [
+            "match",
+            ["get", "Estimated_Size"],
+            "Unspecified",
+            "hsl(357, 5%, 36%)",
+            "Medium",
+            "hsl(23, 89%, 45%)",
+            ["Small", "small"],
+            "hsl(49, 100%, 51%)",
+            "Large",
+            "hsl(0, 95%, 45%)",
+            "hsla(0, 0%, 0%, 0)",
+          ],
+          "circle-opacity": 0.5,
+          "circle-stroke-width": [
+            "case",
+            ["==", ["get", "Arrested"], 0],
+            0.75,
+            [">", ["get", "Arrested"], 10],
+            2,
+            [">", ["get", "Arrested"], 22],
+            4,
+            [">", ["get", "Arrested"], 880],
+            10,
+            0.75,
+          ],
+          "circle-stroke-color": "black",
+          "circle-radius": 8,
+        },
+      });
       let marker = new mapboxgl.Marker(el)
         .setLngLat([Long, Lat])
         .setPopup(popup)
