@@ -144,7 +144,6 @@ map.on("load", function () {
         });
         map.on("mouseleave", "csvData", function () {
           map.getCanvas().style.cursor = "";
-          mapboxgl.Popup.remove();
         });
         // Change the cursor to a pointer when the mouse is over the places layer.
         map.on("mouseenter", "csvData", function () {
