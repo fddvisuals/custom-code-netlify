@@ -49,6 +49,7 @@ $(document).ready(function () {
       header: true,
       complete: function (csvData) {
         makeGeoJSON(csvData);
+        console.log(csvData);
       },
       catch(error) {
         console.log(`Error: ${error}. Row: ${row.webid}`);
