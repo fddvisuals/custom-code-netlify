@@ -57,7 +57,6 @@ $(document).ready(function () {
   );
   function makeGeoJSON(csvData) {
     csv2geojson.csv2geojson(
-      console.log("inside"),
       csvData,
       {
         latfield: "Latitude",
