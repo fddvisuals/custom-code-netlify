@@ -45,7 +45,7 @@ $(document).ready(function () {
   Papa.parse(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=0&single=true&output=csv",
     {
-      // download: true,
+      download: true,
       // header: true,
       complete: function (csvData) {
         makeGeoJSON(csvData);
