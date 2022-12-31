@@ -142,7 +142,7 @@ map.on("load", function () {
             $(".popup-grid-div-killed").toggleClass("is-hidden");
           }
         });
-        map.on("mouseleave", "csvData", function (e) {
+        map.on("mouseleave", "csvData", function () {
           map.getCanvas().style.cursor = "";
           popup.remove();
         });
