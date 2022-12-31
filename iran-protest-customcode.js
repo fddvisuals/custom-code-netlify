@@ -106,7 +106,7 @@ map.on("load", function () {
         });
         // When a click event occurs on a feature in the csvData layer, open a popup at the
         // location of the feature, with description HTML from its properties.
-        map.on("click", "csvData", function (e) {
+        map.on("mousemove", "csvData", function (e) {
           var coordinates = e.features[0].geometry.coordinates.slice();
           //set popup text
           // var description2 = `<h3>${e.features[0].properties.District}</h3><h5><u>Date: ${e.features[0].properties.Formatted_Date}</u></h5><h5><b>Description: </b>${e.features[0].properties.Description}</h5><h5><b>Estimated Size of the Protest: </b>${e.features[0].properties.Estimated_Size}</h4>`;
