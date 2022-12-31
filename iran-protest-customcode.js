@@ -40,32 +40,18 @@ $.ajax(
 ).done(function (lastupdated) {
   document.getElementById("last-updated").innerHTML = lastupdated;
 });
-// $(".ticker-text").each(function (index) {
-//   // assign ID
-//   let thisId = "countup" + index;
-//   $(this).attr("id", thisId);
-//   // create variables
-//   // let startNumber = +$(this).text();
-//   let endNumber = lastupdated;
-//   let decimals = 0;
-//   let duration = 2.5;
-//   // animate number
-//   let myCounter = new CountUp(
-//     thisId,
-//     // startNumber,
-//     endNumber,
-//     decimals,
-//     duration
-//   );
+
 $(document).ready(function () {
-  $.ajax({
-    type: "GET",
-    url: "https://docs.google.com/spreadsheets/d/1k9pmYP2UBYC7N5uIkXYy5UR4B15cFr1zpNSbCOg2BHo/gviz/tq?tqx=out:csv&sheet=Sheet1",
-    dataType: "text",
-    success: function (csvData) {
-      makeGeoJSON(csvData);
-    },
-  });
+  Papa.parse(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=0&single=true&output=csv",
+    {
+      download: true,
+      header: true,
+      complete: function (csvData) {
+        makeGeoJSON(csvData);
+      },
+    }
+  );
   function makeGeoJSON(csvData) {
     csv2geojson.csv2geojson(
       csvData,
@@ -114,83 +100,6 @@ $(document).ready(function () {
               ],
               "circle-stroke-color": "black",
               "circle-radius": 8,
-              // [
-              //   "interpolate",
-              //   ["linear"],
-              //   ["zoom"],
-              //   0,
-              //   [
-              //     "*",
-              //     [
-              //       "match",
-              //       ["get", "Estimated_Size"],
-              //       "Unspecified",
-              //       3,
-              //       ["Small", "small"],
-              //       12,
-              //       "Medium",
-              //       15,
-              //       "Large",
-              //       21,
-              //       0,
-              //     ],
-              //     0.5,
-              //   ],
-              //   5,
-              //   [
-              //     "*",
-              //     [
-              //       "match",
-              //       ["get", "Estimated_Size"],
-              //       "Unspecified",
-              //       3,
-              //       ["Small", "small"],
-              //       12,
-              //       "Medium",
-              //       15,
-              //       "Large",
-              //       21,
-              //       0,
-              //     ],
-              //     0.55,
-              //   ],
-              //   10,
-              //   [
-              //     "*",
-              //     [
-              //       "match",
-              //       ["get", "Estimated_Size"],
-              //       "Unspecified",
-              //       3,
-              //       ["Small", "small"],
-              //       12,
-              //       "Medium",
-              //       15,
-              //       "Large",
-              //       21,
-              //       0,
-              //     ],
-              //     0.7,
-              //   ],
-              //   22,
-              //   [
-              //     "*",
-              //     [
-              //       "match",
-              //       ["get", "Estimated_Size"],
-              //       "Unspecified",
-              //       3,
-              //       ["Small", "small"],
-              //       12,
-              //       "Medium",
-              //       15,
-              //       "Large",
-              //       21,
-              //       0,
-              //     ],
-              //     1,
-              //   ],
-              // ],
             },
           });
           // When a click event occurs on a feature in the csvData layer, open a popup at the
