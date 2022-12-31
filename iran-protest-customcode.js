@@ -65,6 +65,7 @@ $(document).ready(function () {
         delimiter: ",",
       },
       function (err, data) {
+        console.log(data);
         map.on("load", function () {
           //Add the the layer to the map
           map.addLayer({
