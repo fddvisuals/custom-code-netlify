@@ -142,7 +142,7 @@ map.on("load", function () {
             $(".popup-grid-div-killed").toggleClass("is-hidden");
           }
         });
-        map.on("mouseleave", "data-driven-circles", () => {
+        map.on("mouseleave", "csvData", () => {
           map.getCanvas().style.cursor = "";
           popup.remove();
         });
