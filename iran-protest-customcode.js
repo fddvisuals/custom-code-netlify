@@ -142,6 +142,10 @@ map.on("load", function () {
             $(".popup-grid-div-killed").toggleClass("is-hidden");
           }
         });
+        map.on("mouseleave", "data-driven-circles", () => {
+          map.getCanvas().style.cursor = "";
+          popup.remove();
+        });
         // Change the cursor to a pointer when the mouse is over the places layer.
         map.on("mouseenter", "csvData", function () {
           map.getCanvas().style.cursor = "pointer";
