@@ -10,7 +10,6 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoicGF2YWtwYXRlbCIsImEiOiJja3IwbnNqejUxdHpmMm5tbnFoa2tsNDcxIn0.Mi-o-UdZ0hTFy2iN7QBHrg";
 var map = new mapboxgl.Map({
   container: "map", // container id
-  style: "mapbox://styles/mapbox/navigation-day-v1",
   style: "mapbox://styles/mapbox/light-v11",
   center: [51.4, 35.7], // starting position [lng, lat]
   zoom: 3, // starting zoom
