@@ -11,7 +11,7 @@ mapboxgl.accessToken =
 var map = new mapboxgl.Map({
   container: "map", // container id
   style: "mapbox://styles/mapbox/light-v11",
-  center: [47.44, 32.913], // starting position [lng, lat]
+  center: [47.44, 32.3], // starting position [lng, lat]
   zoom: 2.5, // starting zoom
   transformRequest: transformRequest,
 });
