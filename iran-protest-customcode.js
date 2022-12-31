@@ -50,6 +50,9 @@ $(document).ready(function () {
       complete: function (csvData) {
         makeGeoJSON(csvData);
       },
+      catch(error) {
+        console.log(`Error: ${error}. Row: ${row.webid}`);
+      },
     }
   );
   function makeGeoJSON(csvData) {
