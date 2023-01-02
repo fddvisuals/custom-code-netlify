@@ -11,7 +11,7 @@ mapboxgl.accessToken =
 var map = new mapboxgl.Map({
   container: "map", // container id
   style: "mapbox://styles/pavakpatel/clc951nvr00ch14oxscsbswec",
-  center: [40.44, 29.5], // starting position [lng, lat]
+  center: [4.44, 29.5], // starting position [lng, lat]
   zoom: 4.1, // starting zoom
   transformRequest: transformRequest,
 });
