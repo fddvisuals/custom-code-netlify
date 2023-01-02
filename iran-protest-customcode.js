@@ -12,7 +12,7 @@ var map = new mapboxgl.Map({
   container: "map", // container id
   style: "mapbox://styles/mapbox/light-v11",
   center: [40.44, 29.5], // starting position [lng, lat]
-  zoom: 2.5, // starting zoom
+  zoom: 4.1, // starting zoom
   transformRequest: transformRequest,
 });
 $.ajax(
