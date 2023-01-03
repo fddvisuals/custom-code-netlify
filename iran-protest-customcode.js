@@ -55,6 +55,7 @@ map.on("load", function () {
       complete: function (csvData) {
         makeGeoJSON(csvData.data);
         addRecent(csvData.data);
+        addRecentmobile(csvData.data);
       },
     }
   );
@@ -204,7 +205,7 @@ function addRecent(data) {
     });
 }
 const listingEl2 = document.getElementById("feature-listing-mobile");
-function addRecent(data) {
+function addRecentmobile(data) {
   data
     .slice()
     .reverse()
