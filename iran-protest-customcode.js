@@ -186,6 +186,7 @@ map.on("load", function () {
 });
 const listingEl = document.getElementById("feature-listing");
 function addRecent(data) {
+  console.log(data);
   data
     .slice()
     .reverse()
