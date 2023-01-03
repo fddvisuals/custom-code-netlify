@@ -122,7 +122,7 @@ map.on("load", function () {
 <path d="M10 6V8H5V19H16V14H18V20C18 20.2652 17.8946 20.5196 17.7071 20.7071C17.5196 20.8946 17.2652 21 17 21H4C3.73478 21 3.48043 20.8946 3.29289 20.7071C3.10536 20.5196 3 20.2652 3 20V7C3 6.73478 3.10536 6.48043 3.29289 6.29289C3.48043 6.10536 3.73478 6 4 6H10ZM21 3V12L17.206 8.207L11.207 14.207L9.793 12.793L15.792 6.793L12 3H21Z" fill="currentColor"></path>
 </svg></div></a></div></div>
 <video width="100%" height="80%" autoplay>
-<source src="https://drive.google.com/uc?export=download&id=${e.features.properties.video_id}" type='video/mp4'>
+<source src="https://drive.google.com/uc?export=download&id=${e.features.properties.videoid}" type='video/mp4'>
 </video>`;
           // var description = `<div class="popup"><div class="popup-date"><span class="popup-span">Date:&nbsp;</span>${e.features[0].properties.Formatted_Date}</div><div class="popup-area"><span class="popup-span">Location: </span>${e.features[0].properties.District}</div><div class="popup-area"><span class="popup-span">Estimated Size: </span>${e.features[0].properties.Estimated_Size}</div><div class="description">${e.features[0].properties.Description}</div><div class="view-source-div"><a href="${e.features[0].properties.Link}" class="link-block w-inline-block"><div>View Source</div></a></div></div>`;
           // Ensure that if the map is zoomed out such that multiple
