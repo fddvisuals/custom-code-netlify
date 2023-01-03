@@ -50,7 +50,7 @@ map.on("load", function () {
       complete: function (csvData) {
         makeGeoJSON(csvData.data);
         addRecent(csvData.data);
-        // console.log(csvData);
+        console.log(csvData);
       },
     }
   );
