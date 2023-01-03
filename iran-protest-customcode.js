@@ -50,7 +50,6 @@ map.on("load", function () {
       complete: function (csvData) {
         makeGeoJSON(csvData.data);
         addRecent(csvData.data);
-        console.log(csvData);
       },
     }
   );
@@ -185,7 +184,6 @@ function addRecent(data) {
     .slice()
     .reverse()
     .forEach(function (row) {
-      console.log(row);
       const itemLink = document.createElement("a");
       itemLink.href - "#";
       itemLink.target = "_blank";
