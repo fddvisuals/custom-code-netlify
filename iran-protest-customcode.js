@@ -72,7 +72,7 @@ map.on("load", function () {
         delimiter: ",",
       },
       function (err, data) {
-        // console.log(data);
+        console.log(data);
         //Add the the layer to the map
         map.addSource("protests", {
           type: "geojson",
