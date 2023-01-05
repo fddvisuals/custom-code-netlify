@@ -96,9 +96,9 @@ map.on("load", function () {
               "step",
               ["get", "point_count"],
               "#ffd000",
-              100,
+              40,
               "#ff8400",
-              350,
+              250,
               "#ff0000",
             ],
             "circle-radius": [
