@@ -78,7 +78,7 @@ map.on("load", function () {
           type: "geojson",
           data: data,
           cluster: true,
-          clusterMaxZoom: 3,
+          clusterMaxZoom: 14,
           clusterRadius: 5,
         });
         map.addLayer({
