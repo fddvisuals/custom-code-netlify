@@ -13,6 +13,7 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/light-v11",
   center: [40.44, 29.5], // starting position [lng, lat]
   zoom: 4.1, // starting zoom
+  cluster: true,
   transformRequest: transformRequest,
 });
 $.ajax(
