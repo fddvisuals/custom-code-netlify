@@ -82,39 +82,34 @@ map.on("load", function () {
           clusterRadius: 5,
         });
         map.addLayer({
-          id: "csvData",
+          id: "clusters",
           type: "circle",
           source: "protests",
+          filter: ["has", "point_count"],
           paint: {
-            "circle-radius": 5,
+            // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+            // with three steps to implement three types of circles:
+            //   * Blue, 20px circles when point count is less than 100
+            //   * Yellow, 30px circles when point count is between 100 and 750
+            //   * Pink, 40px circles when point count is greater than or equal to 750
             "circle-color": [
-              "match",
-              ["get", "Estimated_Size"],
-              "Unspecified",
-              "hsl(357, 5%, 36%)",
-              "Medium",
-              "hsl(23, 89%, 45%)",
-              ["Small", "small"],
-              "hsl(49, 100%, 51%)",
-              "Large",
-              "hsl(0, 95%, 45%)",
-              "hsla(0, 0%, 0%, 0)",
+              "step",
+              ["get", "point_count"],
+              "#51bbd6",
+              100,
+              "#f1f075",
+              750,
+              "#f28cb1",
             ],
-            "circle-opacity": 0.5,
-            "circle-stroke-width": [
-              "case",
-              ["==", ["get", "Arrested"], 0],
-              0.75,
-              [">", ["get", "Arrested"], 10],
-              2,
-              [">", ["get", "Arrested"], 22],
-              4,
-              [">", ["get", "Arrested"], 880],
-              10,
-              0.75,
+            "circle-radius": [
+              "step",
+              ["get", "point_count"],
+              20,
+              100,
+              30,
+              750,
+              40,
             ],
-            "circle-stroke-color": "black",
-            "circle-radius": 8,
           },
         });
         // When a click event occurs on a feature in the csvData layer, open a popup at the
