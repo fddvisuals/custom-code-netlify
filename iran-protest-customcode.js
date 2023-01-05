@@ -18,6 +18,17 @@ var map = new mapboxgl.Map({
   clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
   transformRequest: transformRequest,
 });
+const size1 = ["match", ["get", "Estimated_Size"], "Unspecified"];
+const size2 = ["match", ["get", "Estimated_Size"], "Small"];
+const size3 = ["match", ["get", "Estimated_Size"], "Medium"];
+const size4 = ["match", ["get", "Estimated_Size"], "Large"];
+
+const colors = [
+  "hsl(357, 5%, 36%)",
+  "hsl(23, 89%, 45%)",
+  "hsl(49, 100%, 51%)",
+  "hsl(0, 95%, 45%)",
+];
 
 $.ajax(
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=a2&single=true&output=csv"
@@ -80,12 +91,19 @@ map.on("load", function () {
           cluster: true,
           clusterMaxZoom: 14,
           clusterRadius: 30,
+          clusterProperties: {
+            // keep separate counts for each magnitude category in a cluster
+            size1: ["+", ["case", size1, 1, 0]],
+            size2: ["+", ["case", size2, 1, 0]],
+            size3: ["+", ["case", size3, 1, 0]],
+            size4: ["+", ["case", size4, 1, 0]],
+          },
         });
         map.addLayer({
           id: "clusters",
           type: "circle",
           source: "protests",
-          filter: ["has", "point_count"],
+          filter: ["!=", "cluster", true],
           paint: {
             // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
             // with three steps to implement three types of circles:
@@ -93,23 +111,19 @@ map.on("load", function () {
             //   * Yellow, 30px circles when point count is between 100 and 750
             //   * Pink, 40px circles when point count is greater than or equal to 750
             "circle-color": [
-              "step",
-              ["get", "point_count"],
-              "#ffd000",
-              40,
-              "#ff8400",
-              250,
-              "#ff0000",
+              "case",
+              size1,
+              colors[0],
+              size2,
+              colors[1],
+              size3,
+              colors[2],
+              size4,
+              colors[3],
+              colors[4],
             ],
-            "circle-radius": [
-              "step",
-              ["get", "point_count"],
-              20,
-              100,
-              30,
-              750,
-              40,
-            ],
+            "circle-opacity": 0.6,
+            "circle-radius": 12,
           },
         });
         map.addLayer({
