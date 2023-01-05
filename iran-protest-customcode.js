@@ -89,7 +89,7 @@ map.on("load", function () {
           type: "geojson",
           data: data,
           cluster: true,
-          clusterMaxZoom: 14,
+          // clusterMaxZoom: 14,
           clusterRadius: 30,
           clusterProperties: {
             // keep separate counts for each magnitude category in a cluster
