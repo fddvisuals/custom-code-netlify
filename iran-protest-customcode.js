@@ -18,6 +18,7 @@ var map = new mapboxgl.Map({
   clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
   transformRequest: transformRequest,
 });
+map.addControl(new mapboxgl.NavigationControl());
 $.ajax(
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=a2&single=true&output=csv"
 ).done(function (injured) {
