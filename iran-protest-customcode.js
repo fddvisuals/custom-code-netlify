@@ -15,7 +15,7 @@ var map = new mapboxgl.Map({
   zoom: 4.1, // starting zoom
   cluster: true,
   clusterMaxZoom: 14, // Max zoom to cluster points on
-  clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
+  clusterRadius: 30, // Radius of each cluster when clustering points (defaults to 50)
   transformRequest: transformRequest,
 });
 
