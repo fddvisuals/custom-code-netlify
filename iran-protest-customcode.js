@@ -103,7 +103,7 @@ map.on("load", function () {
           id: "clusters",
           type: "circle",
           source: "protests",
-          filter: ["!=", "cluster", true],
+          filter: ["has", "point_count"],
           paint: {
             // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
             // with three steps to implement three types of circles:
