@@ -79,7 +79,7 @@ map.on("load", function () {
           data: data,
           cluster: true,
           clusterMaxZoom: 14,
-          clusterRadius: 5,
+          clusterRadius: 30,
         });
         map.addLayer({
           id: "clusters",
