@@ -143,7 +143,7 @@ map.on("load", function () {
               "hsla(0, 0%, 0%, 0)",
             ],
             "circle-opacity": 0.5,
-            "circle-radius": 4,
+            "circle-radius": 15,
             "circle-stroke-width": 1,
             "circle-stroke-color": "#fff",
           },
