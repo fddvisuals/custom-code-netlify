@@ -98,7 +98,7 @@ map.on("load", function () {
               "#51bbd6",
               100,
               "#f1f075",
-              750,
+              350,
               "#f28cb1",
             ],
             "circle-radius": [
