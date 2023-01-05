@@ -106,10 +106,7 @@ map.on("load", function () {
         map.addLayer({
           id: "cluster-count",
           type: "symbol",
-          source: {
-            type: "geojson",
-            data: data,
-          },
+          source: "protests",
           filter: ["has", "point_count"],
           layout: {
             "text-field": ["get", "point_count_abbreviated"],
@@ -138,7 +135,7 @@ map.on("load", function () {
           });
           const clusterId = features[0].properties.cluster_id;
           map
-            .getSource("earthquakes")
+            .getSource("protests")
             .getClusterExpansionZoom(clusterId, (err, zoom) => {
               if (err) return;
 
