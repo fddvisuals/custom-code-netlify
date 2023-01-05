@@ -79,7 +79,7 @@ map.on("load", function () {
           data: data,
           cluster: true,
           clusterMaxZoom: 14,
-          clusterRadius: 50,
+          clusterRadius: 5,
         });
         map.addLayer({
           id: "csvData",
