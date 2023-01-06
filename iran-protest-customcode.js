@@ -37,7 +37,8 @@ $.ajax(
 $.ajax(
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=d2&single=true&output=csv"
 ).done(function (total_events) {
-  document.getElementsByClassName("id_total").innerHTML = total_events;
+  document.getElementById("id_total").innerHTML = total_events;
+  document.getElementById("id-total-text").innerHTML = total_events;
 });
 $.ajax(
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=e2&single=true&output=csv"
