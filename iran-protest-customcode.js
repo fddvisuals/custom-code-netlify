@@ -163,8 +163,10 @@ map.on("load", function () {
             center: [40.44, 29.5],
             zoom: 5,
             essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+            transformRequest: transformRequest,
           });
           popup.remove();
+          
         });
       });
         map.on("click", "clusters", (e) => {
