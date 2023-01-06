@@ -156,6 +156,17 @@ map.on("load", function () {
             "circle-stroke-color": "#fff",
           },
         });
+        map.on("idle", () => {
+        document.getElementById("reset-view").addEventListener("click", () => {
+          // Fly to a random location
+          map.flyTo({
+            center: [35.1708741, 31.9485955],
+            zoom: 6.5,
+            essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+          });
+          popup.remove();
+        });
+      });
         map.on("click", "clusters", (e) => {
           const features = map.queryRenderedFeatures(e.point, {
             layers: ["clusters"],
