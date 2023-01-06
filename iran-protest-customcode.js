@@ -49,7 +49,8 @@ $.ajax(
 $.ajax(
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=e2&single=true&output=csv"
 ).done(function (lastupdated) {
-  document.getElementById("last-updated").innerHTML = lastupdated;
+  var last_updated_noquote = lastupdated;
+  document.getElementById("last-updated").innerHTML = last_updated_noquote.replace(/['"]+/g,'');
 });
 $.ajax(
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTT_uQv7JKEk8An8zPxdgcwxRPNTuypy7XAZcavbSAqnKyHlFD1nB5yJ1Zaa9HiFXVchC9tEy4OPQv/pub?gid=412844906&range=e2&single=true&output=csv"
