@@ -160,10 +160,9 @@ map.on("load", function () {
         document.getElementById("reset-view").addEventListener("click", () => {
           // Fly to a random location
           map.flyTo({
-            center: [30.44, 29.5],
+            center: [40.44, 39.5],
             zoom: 5,
             essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-            transformRequest: transformRequest,
           });
           popup.remove();
           
