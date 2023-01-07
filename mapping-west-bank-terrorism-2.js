@@ -419,37 +419,38 @@ Papa.parse(
     header: true,
     complete: function (csvData) {
       const listingEl = document.getElementById("feature-listing-1");
-      function addRecent(csvData) {
-        console.log(csvData);
-        data
-          .slice()
-          .reverse()
-          .forEach(function (row) {
-            const itemLink = document.createElement("a");
-            itemLink.href - "#";
-            itemLink.target = "_blank";
-            itemLink.className = "";
-            itemLink.innerHTML = `<div role="listitem" class="wb_related_item w-dyn-item"><a href="https://www.fdd.org/analysis/2022/12/15/targeting-hamas-israel-reestablish-deterrence-gaza/" target="_blank" class="related-pub-link-block w-inline-block"><h1 class="publications-title small">"Targeting Hamas, Israel tries to reestablish deterrence in Gaza"</h1><div class="related-subtitle-italics">Enia Krivine</div><div class="subtitle-horizontal-wrapper"><div class="related-subtitle">December 15, 2022</div><div class="related-subtitle">, &nbsp;</div><div class="related-subtitle">Op-ed in Washington Examiner</div></div></a></div>`;
-            // itemLink.addEventListener("mouseover", () => {
-            //   popupGenerator(feature);
-            // });
-            itemLink.onclick = function () {
-              // setActive(listing);
-              // When a menu item is clicked, animate the map to center
-              // its associated locale and open its popup.
-              map.flyTo({
-                center: feature.geometry.coordinates,
-                zoom: 16,
-              });
-              //locale.openPopup();
-              return false;
-            };
-            listingEl.appendChild(itemLink);
-          });
-      }
+      function addRecent();
     },
   }
 );
+function addRecent(csvData) {
+  console.log(csvData);
+  data
+    .slice()
+    .reverse()
+    .forEach(function (row) {
+      const itemLink = document.createElement("a");
+      itemLink.href - "#";
+      itemLink.target = "_blank";
+      itemLink.className = "";
+      itemLink.innerHTML = `<div role="listitem" class="wb_related_item w-dyn-item"><a href="https://www.fdd.org/analysis/2022/12/15/targeting-hamas-israel-reestablish-deterrence-gaza/" target="_blank" class="related-pub-link-block w-inline-block"><h1 class="publications-title small">"Targeting Hamas, Israel tries to reestablish deterrence in Gaza"</h1><div class="related-subtitle-italics">Enia Krivine</div><div class="subtitle-horizontal-wrapper"><div class="related-subtitle">December 15, 2022</div><div class="related-subtitle">, &nbsp;</div><div class="related-subtitle">Op-ed in Washington Examiner</div></div></a></div>`;
+      // itemLink.addEventListener("mouseover", () => {
+      //   popupGenerator(feature);
+      // });
+      itemLink.onclick = function () {
+        // setActive(listing);
+        // When a menu item is clicked, animate the map to center
+        // its associated locale and open its popup.
+        map.flyTo({
+          center: feature.geometry.coordinates,
+          zoom: 16,
+        });
+        //locale.openPopup();
+        return false;
+      };
+      listingEl.appendChild(itemLink);
+    });
+}
 
 // "<div role="listitem" class="wb_related_item w-dyn-item"><a href="https://www.fdd.org/analysis/2022/12/15/targeting-hamas-israel-reestablish-deterrence-gaza/" target="_blank" class="related-pub-link-block w-inline-block"><h1 class="publications-title small">"Targeting Hamas, Israel tries to reestablish deterrence in Gaza"</h1><div class="related-subtitle-italics">Enia Krivine</div><div class="subtitle-horizontal-wrapper"><div class="related-subtitle">December 15, 2022</div><div class="related-subtitle">, &nbsp;</div><div class="related-subtitle">Op-ed in Washington Examiner</div></div></a></div>"
 // https://docs.google.com/spreadsheets/d/e/2PACX-1vSF2MCbKjaGWAqudInjQIsv5KV8SJHCGhpXyd5_ncpUQfUeTwboBZP_ALsa3ybJw95ro8Zq4a_A2btv/pub?gid=0&single=true&output=csv
