@@ -418,7 +418,7 @@ Papa.parse(
     download: true,
     header: true,
     complete: function (csvData) {
-      function addRecent();
+      addRecent(csvData.data);
     },
   }
 );
