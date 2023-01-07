@@ -437,7 +437,7 @@ function addRecent(csvData) {
       // itemLink.addEventListener("mouseover", () => {
       //   popupGenerator(feature);
       // });
-      itemLink.onclick = function () {
+      itemLink2.onclick = function () {
         // setActive(listing);
         // When a menu item is clicked, animate the map to center
         // its associated locale and open its popup.
@@ -448,7 +448,7 @@ function addRecent(csvData) {
         //locale.openPopup();
         return false;
       };
-      listingEl.appendChild(itemLink);
+      listingEl2.appendChild(itemLink2);
     });
 }
 
