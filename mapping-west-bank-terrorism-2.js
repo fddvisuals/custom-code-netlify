@@ -418,11 +418,11 @@ Papa.parse(
     download: true,
     header: true,
     complete: function (csvData) {
-      const listingEl = document.getElementById("feature-listing-1");
       function addRecent();
     },
   }
 );
+const listingEl = document.getElementById("feature-listing-1");
 function addRecent(csvData) {
   console.log(csvData);
   data
