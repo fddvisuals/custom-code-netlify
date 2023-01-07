@@ -6,7 +6,7 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoicGF2YWtwYXRlbCIsImEiOiJja3IwbnNqejUxdHpmMm5tbnFoa2tsNDcxIn0.Mi-o-UdZ0hTFy2iN7QBHrg";
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/light-v11",
+  style: "mapbox://styles/pavakpatel/cl9goeb54004914o0f9zfa9ah",
   center: [35.1708741, 31.9485955],
   minZoom: 6.5,
   //maxBounds: bounds
