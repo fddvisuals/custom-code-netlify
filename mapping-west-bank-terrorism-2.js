@@ -432,7 +432,7 @@ function addRecent(data) {
       const itemLink2 = document.createElement("a");
       itemLink2.href - "#";
       itemLink2.target = "_blank";
-      itemLin2.className = "";
+      itemLink2.className = "";
       itemLink2.innerHTML = `<div role="listitem" class="wb_related_item w-dyn-item"><a href="https://www.fdd.org/analysis/2022/12/15/targeting-hamas-israel-reestablish-deterrence-gaza/" target="_blank" class="related-pub-link-block w-inline-block"><h1 class="publications-title small">"Targeting Hamas, Israel tries to reestablish deterrence in Gaza"</h1><div class="related-subtitle-italics">Enia Krivine</div><div class="subtitle-horizontal-wrapper"><div class="related-subtitle">December 15, 2022</div><div class="related-subtitle">, &nbsp;</div><div class="related-subtitle">Op-ed in Washington Examiner</div></div></a></div>`;
       // itemLink.addEventListener("mouseover", () => {
       //   popupGenerator(feature);
