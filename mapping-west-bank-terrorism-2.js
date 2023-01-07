@@ -423,8 +423,8 @@ Papa.parse(
   }
 );
 const listingEl2 = document.getElementById("feature-listing-1");
-function addRecent(csvData) {
-  console.log(csvData);
+function addRecent(data) {
+  console.log(data);
   data
     .slice()
     .reverse()
