@@ -376,7 +376,7 @@ map.on("load", () => {
     globalThis.globalvariablemonth = month + 1;
   }
 
-  filterBy(12);
+  filterBy(13);
 
   //Listen for slider input and invoke filterBy (month)
   document.getElementById("slider").addEventListener("input", (e) => {
