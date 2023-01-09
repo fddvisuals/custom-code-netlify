@@ -81,7 +81,7 @@ const months = [
   "October 2022",
   "November 2022",
   "December 2022",
-  "January 2023"
+  "January 2023",
   "All (since March 2022)",
 ];
 let allfilter = [
