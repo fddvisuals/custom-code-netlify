@@ -81,7 +81,8 @@ const months = [
   "October 2022",
   "November 2022",
   "December 2022",
-  "All | March to December",
+  "January 2023"
+  "All (since March 2022)",
 ];
 let allfilter = [
   [
@@ -302,7 +303,7 @@ map.on("load", () => {
   //filterby function
   const mnthfilter = [];
   function filterBy(month) {
-    if (month == "12") {
+    if (month == "13" ) {
       if (globalisclicked == 1) {
         let blueall1 = [
           "all",
