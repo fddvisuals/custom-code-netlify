@@ -121,6 +121,7 @@ map.on("load", function () {
               750,
               40,
             ],
+            "circle-opacity": 0.6,
           },
         });
         map.addLayer({
@@ -155,7 +156,7 @@ map.on("load", function () {
             //   "hsla(0, 0%, 0%, 0)",
             // ],
             "circle-opacity": 0.8,
-            "circle-radius": 10,
+            "circle-radius": 5,
             "circle-stroke-width": 1,
             "circle-stroke-color": "#fff",
           },
