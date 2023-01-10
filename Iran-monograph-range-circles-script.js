@@ -12,7 +12,7 @@ let map = new mapboxgl.Map({
 });
 // Add Circle Radius
 const center = [LONG, LAT];
-const radius = 200;
+const radius = 300;
 const options = {
   steps: 150,
   units: "kilometers",
@@ -201,7 +201,7 @@ map.on("load", function (e) {
   //Popup on Hover
   map.on("mouseenter", "circle-fill", () => {
     map.getCanvas().style.cursor = "pointer";
-    popup.setHTML("<b> 200 KM</b>");
+    popup.setHTML("<b> 300 KM</b>");
     popup.setLngLat([LONG, LAT]);
     popup.addTo(map);
     map.setFeatureState(
