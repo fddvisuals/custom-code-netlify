@@ -86,7 +86,7 @@ map.on("load", function () {
           type: "geojson",
           data: data,
           cluster: true,
-          clusterMaxZoom: 14,
+          clusterMaxZoom: 10,
           clusterRadius: 30,
         });
         const popup = new mapboxgl.Popup({
